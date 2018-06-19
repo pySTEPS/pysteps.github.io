@@ -1,5 +1,5 @@
 # Welcome to pySTEPS!
-<url>https://github.com/pySTEPS</url>
+[https://github.com/pySTEPS](https://github.com/pySTEPS)
 
 The pySTEPS initiative is a community that develops and maintains an easy to use, modular, free and open source python framework for short-term, ensemble prediction systems (STEPS).
 
@@ -17,7 +17,7 @@ Here we will explain how to set up pySTEPS in a linux environment. For Windows y
 To download the github repositories containing the pySTEPS modules proceed as follows:
 1. Create a "pySTEPS" directory in your home folder or server ("mkdir pySTEPS"). Enter the directory ("cd pySTEPS").
 2. Download the set of pySTEPS modules as follows:
-pySTEPS_URL=<url>https://github.com/pySTEPS</url> <br/>
+pySTEPS_URL=https://github.com/pySTEPS <br/>
 git clone $pySTEPS_URL/tutorials <br/>
 git clone $pySTEPS_URL/iotools <br/>
 git clone $pySTEPS_URL/datatools <br/>

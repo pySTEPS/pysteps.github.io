@@ -43,12 +43,17 @@ If all the needed dependencies are properly installed, you should be able to run
 For additional information on how to manage a conda virtual environments see https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/
 
 ## pySTEPS tutorials
-Theses are the available tutorials: <br/>
-tutorials/tutorial1_motion.py <br/>
+Theses are the available tutorials:
+1. tutorials/tutorial1_motion.py
+2. tutorials/tutorial2a_cascade.py
+3. tutorials/tutorial2b_noisegenerator.py
 
-There are two possible ways to run the tutorials: <br/>
-1. You make the python script executable ("chmod + x tutorial1_motion.py") and run it (./tutorial1_motion.py) <br/>
-2. You open a python session and copy the script step by step so that you have more time to understand how the code works :-) <br/>
+The tutorials are designed to be as self-explanatory as possible and to guide you through the basic functionalities of pySTEPS.
+
+The data set for the tutorials can be downloaded from one of these sources:
+1. [Dropbox](https://www.dropbox.com/s/sowzh1kh02lu1fr/archive.zip?dl=0)
+
+At the beginning of each tutorial, the user needs to specify the path to the unzipped data set on his machine.
 
 ## Getting in touch
 

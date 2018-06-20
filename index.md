@@ -43,7 +43,6 @@ You proceed as follows: <br/>
 conda install opencv <br/>
 conda install pyproj <br/>
 conda install pillow <br/>
-conda install  <br/>
 etc <br/>
 
 If all the needed dependencies are properly installed, you should be able to run the pySTEPS tutorials. <br/>

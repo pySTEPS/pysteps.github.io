@@ -3,27 +3,32 @@
 
 The pySTEPS initiative is a community that develops and maintains an easy to use, modular, free and open source python framework for short-term, ensemble prediction systems (STEPS).
 
-The focus is on probabilistic nowcasting of radar precipitation fields, but pySTEPS is designed to allow a wider range of uses. 
+The focus is on **probabilistic nowcasting of radar precipitation fields**, but pySTEPS is designed to allow a wider range of uses. 
 
 ## Quick-start guide
 It is very easy to start using pySTEPS! You need to do two things:  <br/>
 A. Download (clone) the pySTEPS repositories to your computer/server. <br/>
 B. Install Anaconda2.7 and the needed python libraries. <br/>
-Important: pySTEPS currently uses Python 2. In the future we will consider migrating to Python 3. <br/>
 
+Important: pySTEPS currently uses Python 2. In the future we will consider migrating to Python 3. <br/>
 Here we will explain how to set up pySTEPS in a linux environment. For Windows you will have to download the repositories by hand.
 
 ### A. Downloading the pySTEPS respositories
 To download the github repositories containing the pySTEPS modules proceed as follows:
 1. Create a "pySTEPS" directory in your home folder or server ("mkdir pySTEPS"). Enter the directory ("cd pySTEPS").
-2. Download the set of pySTEPS modules as follows:
+2. Download the set of pySTEPS modules as follows: <br/>
 pySTEPS_URL=https://github.com/pySTEPS <br/>
 git clone $pySTEPS_URL/tutorials <br/>
+git clone $pySTEPS_URL/motion <br/>
+git clone $pySTEPS_URL/timeseries <br/>
+git clone $pySTEPS_URL/perturbation <br/>
+git clone $pySTEPS_URL/stepsnwc <br/>
+git clone $pySTEPS_URL/verification <br/>
+git clone $pySTEPS_URL/visualization <br/>
 git clone $pySTEPS_URL/iotools <br/>
 git clone $pySTEPS_URL/datatools <br/>
-git clone $pySTEPS_URL//motion <br/>
-git clone $pySTEPS_URL/stepsnwc <br/>
 etc <br/>
+
 Important: each github repository contains a single pySTEPS module. <br/>
 If you already have an appropriate python environment with all the needed python libraries (e.g. Anaconda) you can start trying the pySTEPS tutorials. Otherwise, go to step B.
 
@@ -39,6 +44,7 @@ conda install opencv <br/>
 conda install pyproj <br/>
 conda install PIL <br/>
 etc <br/>
+
 If all the needed dependencies are properly installed, you should be able to run the pySTEPS tutorials. <br/>
 For additional information on how to manage a conda virtual environments see https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/
 
@@ -52,6 +58,7 @@ The tutorials are designed to be as self-explanatory as possible and to guide yo
 
 The data set for the tutorials can be downloaded from one of these sources:
 1. [Dropbox](https://www.dropbox.com/s/sowzh1kh02lu1fr/archive.zip?dl=0)
+2. [GoogleDrive](https://drive.google.com/open?id=1-OMxKiJihknimBFvZYbfc2-WoMiUfARz)
 
 At the beginning of each tutorial, the user needs to specify the path to the unzipped data set on his machine.
 

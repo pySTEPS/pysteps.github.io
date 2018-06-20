@@ -10,10 +10,10 @@ It is very easy to start using pySTEPS! You need to do two things:  <br/>
 A. Download (clone) the pySTEPS repositories to your computer/server. <br/>
 B. Install Anaconda2.7 and the needed python libraries. <br/>
 
-Important: pySTEPS currently uses Python 2. In the future we will consider migrating to Python 3. <br/>
+Important: pySTEPS currently uses Python 2.7. In the future we will consider migrating to Python 3. <br/>
 Here we will explain how to set up pySTEPS in a linux environment. For Windows you will have to download the repositories by hand.
 
-### A. Downloading the pySTEPS respositories
+### A. Downloading the pySTEPS repositories
 To download the github repositories containing the pySTEPS modules proceed as follows:
 1. Create a "pySTEPS" directory in your home folder or server ("mkdir pySTEPS"). Enter the directory ("cd pySTEPS").
 2. Download the set of pySTEPS modules as follows: <br/>
@@ -42,7 +42,8 @@ You proceed as follows: <br/>
 5. Install the needed libraries as follows: <br/>
 conda install opencv <br/>
 conda install pyproj <br/>
-conda install PIL <br/>
+conda install pillow <br/>
+conda install  <br/>
 etc <br/>
 
 If all the needed dependencies are properly installed, you should be able to run the pySTEPS tutorials. <br/>
@@ -67,5 +68,7 @@ At the beginning of each tutorial, the user needs to specify the path to the unz
 ## Announcements
 
 ### ERAD2018 short-course
+
+[ERAD short-course 4](https://www.erad2018.nl/short-courses/)
 
 

@@ -53,6 +53,7 @@ Theses are the available tutorials:
 1. tutorials/tutorial1_motion.py
 2. tutorials/tutorial2a_cascade.py
 3. tutorials/tutorial2b_noisegenerator.py
+4. tutorials/tutorial3_stochasticextrapolation.py
 
 The tutorials are designed to be as self-explanatory as possible and to guide you through the basic functionalities of pySTEPS.
 

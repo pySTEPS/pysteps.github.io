@@ -46,7 +46,7 @@ conda install PIL <br/>
 etc <br/>
 
 If all the needed dependencies are properly installed, you should be able to run the pySTEPS tutorials. <br/>
-For additional information on how to manage a conda virtual environments see https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/
+For additional information on how to manage a conda virtual environments see [Conda](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/).
 
 ## pySTEPS tutorials
 Theses are the available tutorials:
@@ -58,7 +58,7 @@ The tutorials are designed to be as self-explanatory as possible and to guide yo
 
 The data set for the tutorials can be downloaded from one of these sources:
 1. [Dropbox](https://www.dropbox.com/s/sowzh1kh02lu1fr/archive.zip?dl=0)
-2. [GoogleDrive](https://drive.google.com/open?id=1-OMxKiJihknimBFvZYbfc2-WoMiUfARz)
+2. [GoogleDrive](https://drive.google.com/open?id=1LytJ5b0PcBHE3zWS5CHJm1_QeWGZxZwd)
 
 At the beginning of each tutorial, the user needs to specify the path to the unzipped data set on his machine.
 

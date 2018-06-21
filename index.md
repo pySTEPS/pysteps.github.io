@@ -1,3 +1,6 @@
+[logo]: https://avatars3.githubusercontent.com/u/40021569?s=200&v=4
+![alt text][logo]
+
 # Welcome to pySTEPS!
 [https://github.com/pySTEPS](https://github.com/pySTEPS)
 

@@ -18,7 +18,7 @@ Here we will explain how to set up pySTEPS in a linux environment. For Windows y
 ### A. Installing Anaconda
 It is strongly advised to install the last version of Anaconda for optimal management of the libraries needed in pySTEPS. <br/> 
 You proceed as follows: <br/>
-1. Download the appropriate Anaconda for your platform: https://www.anaconda.com/download/ <br/>
+1. Download the appropriate Anaconda for your platform: [https://www.anaconda.com/download/](https://www.anaconda.com/download/) <br/>
 2. Follow the instructions to install Anaconda. <br/>
 3. Update Anaconda: "conda update conda". <br/>
 4. Create a Python 2.7 virtual environment with Anaconda: "conda create -n \<yourenvname\> python=2.7 anaconda". <br/>

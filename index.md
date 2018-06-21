@@ -23,8 +23,10 @@ You proceed as follows: <br/>
 1. Download the appropriate Anaconda for your platform: [https://www.anaconda.com/download/](https://www.anaconda.com/download/) <br/>
 2. Follow the instructions to install Anaconda. <br/>
 3. Use ```conda update conda``` to update Anaconda.
-4. Create a Python 2.7 virtual environment with Anaconda: ```conda create -n \<yourenvname\> python=2.7 anaconda```. <br/>
-5. Activate the virtual environment: ```source activate \<yourenvname\>```. <br/>
+4. Create a Python 2.7 virtual environment with Anaconda: <br/> 
+```conda create -n <yourenvname> python=2.7 "anaconda```. <br/>
+5. Activate the virtual environment: <br/> 
+```source activate <yourenvname>```. <br/>
   
 ### B. Installing dependencies  
 The default installation from the most recent version of Anaconda (version 5.2) should already include all necessary packages for pySTEPS. 
@@ -35,26 +37,31 @@ conda install pyproj
 conda install opencv
 ```
 
-If you find any other missing library when trying to run pySTEPS, simply install it with ```conda install \<packagename\>```.
+If you find any other missing library when trying to run pySTEPS, simply install it with: <br/> 
+```conda install <packagename>```
 
 If all the needed dependencies are properly installed, you should be able to run the [pySTEPS tutorials](#tutorials). <br/>
 For additional information on how to manage a conda virtual environments see [Conda](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/).
 
 ### C. Downloading the pySTEPS repositories
 To download the github repositories containing the pySTEPS modules proceed as follows:
-1. Create a "pySTEPS" directory in your home folder or server ("mkdir pySTEPS"). Enter the directory ("cd pySTEPS").
+1. Create a "pySTEPS" directory in your home folder or server
+```
+mkdir pySTEPS
+cd pySTEPS
+```
 2. Download the set of pySTEPS modules as follows: <br/>
 ```bash
-pySTEPS_URL=https://github.com/pySTEPS <br/>
-git clone $pySTEPS_URL/tutorials <br/>
-git clone $pySTEPS_URL/motion <br/>
-git clone $pySTEPS_URL/timeseries <br/>
-git clone $pySTEPS_URL/perturbation <br/>
-git clone $pySTEPS_URL/stepsnwc <br/>
-git clone $pySTEPS_URL/verification <br/>
-git clone $pySTEPS_URL/visualization <br/>
-git clone $pySTEPS_URL/iotools <br/>
-git clone $pySTEPS_URL/datatools <br/>
+pySTEPS_URL=https://github.com/pySTEPS
+git clone $pySTEPS_URL/tutorials
+git clone $pySTEPS_URL/motion
+git clone $pySTEPS_URL/timeseries
+git clone $pySTEPS_URL/perturbation
+git clone $pySTEPS_URL/stepsnwc
+git clone $pySTEPS_URL/verification
+git clone $pySTEPS_URL/visualization
+git clone $pySTEPS_URL/iotools
+git clone $pySTEPS_URL/datatools
 ```
 Note that each github repository contains a single pySTEPS module. <br/>
 
@@ -77,7 +84,7 @@ Once downloaded, unzip the archive.zip file into a local folder on your machine.
 Subfolders *mch* and *fmi* contain each two precipitation events. Each precipitation event includes a sequence of 40 radar precipitation fields.
 
 ## B. Run the tutorial
-Navigate to the tutorials module and open the first tutorial file with your preferred editor.
+Navigate to the tutorials module directory and open the first tutorial file with your preferred editor.
 Search the variable named *path_inputs*. **The path to the folder containing the input files needs to be copy/pasted to the variable at the beginning of each tutorial.**
 
 Finally, to run the first tutorial script simply use: ```python tutorial1_motion.py```.

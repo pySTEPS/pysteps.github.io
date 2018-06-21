@@ -9,7 +9,7 @@ The focus is on **probabilistic nowcasting of radar precipitation fields**, but 
 
 ## Quick-start guide
 It is very easy to start using pySTEPS! You need to follow these steps:  <br/>
-A. If not already available, install Anaconda to manage all the necessary installations.  <br/>
+A. If not already available, install **Anaconda** to manage all the necessary installations.  <br/>
 B. Install the dependencies with Anaconda.  <br/>
 C. Download (clone) the pySTEPS repositories to your computer/server. <br/>
 
@@ -22,20 +22,20 @@ It is strongly advised to install the last version of Anaconda for optimal manag
 You proceed as follows: <br/>
 1. Download the appropriate Anaconda for your platform: [https://www.anaconda.com/download/](https://www.anaconda.com/download/) <br/>
 2. Follow the instructions to install Anaconda. <br/>
-3. Use '''conda update conda''' to update Anaconda.
-4. Create a Python 2.7 virtual environment with Anaconda: '''conda create -n \<yourenvname\> python=2.7 anaconda'''. <br/>
-5. Activate the virtual environment: '''source activate \<yourenvname\>'''. <br/>
+3. Use ```conda update conda``` to update Anaconda.
+4. Create a Python 2.7 virtual environment with Anaconda: ```conda create -n \<yourenvname\> python=2.7 anaconda```. <br/>
+5. Activate the virtual environment: ```source activate \<yourenvname\>```. <br/>
   
 ### B. Installing dependencies  
 The default installation from the most recent version of Anaconda (version 5.2) should already include all necessary packages for pySTEPS. 
 
 However, we have found that in many cases, the user still needs to manually install the following libraries:
-'''
+```
 conda install pyproj
 conda install opencv
-'''
+```
 
-If you find any other missing library when trying to run pySTEPS, simply install it with '''conda install \<packagename\>'''.
+If you find any other missing library when trying to run pySTEPS, simply install it with ```conda install \<packagename\>```.
 
 If all the needed dependencies are properly installed, you should be able to run the [pySTEPS tutorials](#tutorials). <br/>
 For additional information on how to manage a conda virtual environments see [Conda](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/).
@@ -44,6 +44,7 @@ For additional information on how to manage a conda virtual environments see [Co
 To download the github repositories containing the pySTEPS modules proceed as follows:
 1. Create a "pySTEPS" directory in your home folder or server ("mkdir pySTEPS"). Enter the directory ("cd pySTEPS").
 2. Download the set of pySTEPS modules as follows: <br/>
+```bash
 pySTEPS_URL=https://github.com/pySTEPS <br/>
 git clone $pySTEPS_URL/tutorials <br/>
 git clone $pySTEPS_URL/motion <br/>
@@ -54,11 +55,10 @@ git clone $pySTEPS_URL/verification <br/>
 git clone $pySTEPS_URL/visualization <br/>
 git clone $pySTEPS_URL/iotools <br/>
 git clone $pySTEPS_URL/datatools <br/>
-
+```
 Note that each github repository contains a single pySTEPS module. <br/>
 
-## pySTEPS tutorials
-<a name="tutorials"></a>
+## pySTEPS tutorials<a name="tutorials"></a>
 Theses are the available tutorials included in pySTEPS:
 1. tutorials/tutorial1_motion.py
 2. tutorials/tutorial2_cascade.py
@@ -80,7 +80,7 @@ Subfolders *mch* and *fmi* contain each two precipitation events. Each precipita
 Navigate to the tutorials module and open the first tutorial file with your preferred editor.
 Search the variable named *path_inputs*. **The path to the folder containing the input files needs to be copy/pasted to the variable at the beginning of each tutorial.**
 
-Finally, to run the first tutorial script simply use: '''python tutorial1_motion.py'''.
+Finally, to run the first tutorial script simply use: ```python tutorial1_motion.py```.
 
 ## Getting in touch
 

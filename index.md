@@ -14,7 +14,7 @@ B. Install the dependencies with Anaconda.  <br/>
 C. Download (clone) the pySTEPS repositories to your computer/server. <br/>
 
 Important: pySTEPS currently uses **Python 2.7**. In the future we will consider migrating to Python 3. <br/>
-Here we will explain how to set up pySTEPS in a linux environment. For Windows you will have to download the repositories by hand.
+Here we will explain how to set up pySTEPS in a linux environment.
 
 
 ### A. Installing Anaconda
@@ -24,9 +24,9 @@ You proceed as follows: <br/>
 2. Follow the instructions to install Anaconda. <br/>
 3. Use ```conda update conda``` to update Anaconda.
 4. Create a Python 2.7 virtual environment with Anaconda: <br/> 
-```conda create -n <yourenvname> python=2.7 "anaconda```. <br/>
+```conda create -n <yourenvname> python=2.7 anaconda``` <br/>
 5. Activate the virtual environment: <br/> 
-```source activate <yourenvname>```. <br/>
+```source activate <yourenvname>``` <br/>
   
 ### B. Installing dependencies  
 The default installation from the most recent version of Anaconda (version 5.2) should already include all necessary packages for pySTEPS. 
@@ -87,7 +87,7 @@ Subfolders *mch* and *fmi* contain each two precipitation events. Each precipita
 Navigate to the tutorials module directory and open the first tutorial file with your preferred editor.
 Search the variable named *path_inputs*. **The path to the folder containing the input files needs to be copy/pasted to the variable at the beginning of each tutorial.**
 
-Finally, to run the first tutorial script simply use: ```python tutorial1_motion.py```.
+Finally, to run the first tutorial script simply use: ```python tutorial1_motion.py```
 
 ## Getting in touch
 

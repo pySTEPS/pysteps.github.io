@@ -18,7 +18,7 @@ Here we will explain how to set up pySTEPS in a linux environment.
 
 
 ### A. Installing Anaconda
-It is strongly advised to install the last version of Anaconda for optimal management of the libraries needed in pySTEPS. <br/> 
+It is strongly advised to install the last version of **Anaconda 3** for optimal management of the libraries needed in pySTEPS. <br/> 
 You proceed as follows: <br/>
 1. Download the appropriate Anaconda for your platform: [https://www.anaconda.com/download/](https://www.anaconda.com/download/) <br/>
 2. Follow the instructions to install Anaconda. For example you can execute the downloaded file as follows:
@@ -39,9 +39,9 @@ The default installation from the most recent version of Anaconda (version 5.2) 
 
 However, we have found that in many cases, the user still needs to manually install the following libraries:
 ```
-conda install pyproj
-conda install opencv
 conda install git
+conda install opencv
+conda install pyproj
 ```
 
 If you find any other missing library when trying to run pySTEPS, simply install it with: <br/> 
@@ -71,8 +71,8 @@ git clone $pySTEPS_URL/datatools
 ```
 Note that each github repository contains a single pySTEPS module. <br/>
 
-## pySTEPS tutorials<a name="tutorials"></a>
-If all the needed dependencies are properly installed, you should be able to run the [pySTEPS tutorials](#tutorials). <br/>
+## pySTEPS tutorials
+If all the needed dependencies are properly installed, you should be able to run the pySTEPS tutorials. <br/>
 Note that you need to clone all the pySTEPS modules above to run the tutorials. <br/>
 Theses are the available tutorials included in pySTEPS:
 1. tutorials/tutorial1_motion.py
@@ -87,13 +87,13 @@ The data set containing four case studies for the tutorials can be downloaded fr
 1. [Dropbox](https://www.dropbox.com/s/sowzh1kh02lu1fr/archive.zip?dl=0)
 2. [GoogleDrive](https://drive.google.com/open?id=1LytJ5b0PcBHE3zWS5CHJm1_QeWGZxZwd)
 
-Once downloaded, unzip the archive.zip file into a local folder on your machine. At the end of this step, you should obtain a folder containing two subfolders named *mch* and *fmi*. This directory must be set in the **data_paths.py** file before starting the tutorials. In that file you can also set the directory where to srite the pySTEPS output (figures, plots, forecasts, etc).
+Once downloaded, unzip the archive.zip file into a local folder on your machine. At the end of this step, you should obtain a folder containing two subfolders named *mch* and *fmi*. 
 
 Subfolders *mch* and *fmi* contain each two precipitation events. Each precipitation event includes a sequence of 40 radar precipitation fields.
 
 ### 2. Run the tutorial
-Navigate to the tutorials module directory and open the first tutorial file with your preferred editor.
-Search the variable named *path_inputs*. **The path to the folder containing the input files needs to be copy/pasted to the variable at the beginning of each tutorial.**
+Navigate to the tutorials module directory and open the file *data_paths.py*.
+**Set the variable *path_inputs* to the directory where you have downloaded your radar data** (it is the directory containing the *mch* and *fmi* subfolders). In that file you can also set the variable *path_outputs* where to write the pySTEPS output (figures, plots, forecasts, etc).
 
 Finally, to run the first tutorial script simply use: ```python tutorial1_motion.py```
 

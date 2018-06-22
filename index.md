@@ -21,13 +21,19 @@ Here we will explain how to set up pySTEPS in a linux environment.
 It is strongly advised to install the last version of Anaconda for optimal management of the libraries needed in pySTEPS. <br/> 
 You proceed as follows: <br/>
 1. Download the appropriate Anaconda for your platform: [https://www.anaconda.com/download/](https://www.anaconda.com/download/) <br/>
-2. Follow the instructions to install Anaconda. <br/>
+2. Follow the instructions to install Anaconda. For example you can execute the downloaded file as follows:
+```
+chmod +x Anaconda3-5.2.0-Linux-x86_64.sh
+./Anaconda3-5.2.0-Linux-x86_64.sh
+```
 3. Use ```conda update conda``` to update Anaconda.
 4. Create a Python 2.7 virtual environment with Anaconda: <br/> 
 ```conda create -n <yourenvname> python=2.7 anaconda``` <br/>
 5. Activate the virtual environment: <br/> 
 ```source activate <yourenvname>``` <br/>
-  
+
+It may happen that the command conda is not yet visible. You can either source your .bashrc file or simply log out and log in again.
+
 ### B. Installing dependencies  
 The default installation from the most recent version of Anaconda (version 5.2) should already include all necessary packages for pySTEPS. 
 
@@ -35,12 +41,12 @@ However, we have found that in many cases, the user still needs to manually inst
 ```
 conda install pyproj
 conda install opencv
+conda install git
 ```
 
 If you find any other missing library when trying to run pySTEPS, simply install it with: <br/> 
 ```conda install <packagename>```
 
-If all the needed dependencies are properly installed, you should be able to run the [pySTEPS tutorials](#tutorials). <br/>
 For additional information on how to manage a conda virtual environments see [Conda](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/).
 
 ### C. Downloading the pySTEPS repositories
@@ -66,6 +72,8 @@ git clone $pySTEPS_URL/datatools
 Note that each github repository contains a single pySTEPS module. <br/>
 
 ## pySTEPS tutorials<a name="tutorials"></a>
+If all the needed dependencies are properly installed, you should be able to run the [pySTEPS tutorials](#tutorials). <br/>
+Note that you need to clone all the pySTEPS modules above to run the tutorials. <br/>
 Theses are the available tutorials included in pySTEPS:
 1. tutorials/tutorial1_motion.py
 2. tutorials/tutorial2_cascade.py
@@ -74,16 +82,16 @@ Theses are the available tutorials included in pySTEPS:
 
 The tutorials are designed to be as self-explanatory as possible and to guide you through the basic functionalities of pySTEPS. To run the tutorials, follow the instructions below.
 
-## A. Download the input data
+### 1. Download the input data
 The data set containing four case studies for the tutorials can be downloaded from one of these sources:
 1. [Dropbox](https://www.dropbox.com/s/sowzh1kh02lu1fr/archive.zip?dl=0)
 2. [GoogleDrive](https://drive.google.com/open?id=1LytJ5b0PcBHE3zWS5CHJm1_QeWGZxZwd)
 
-Once downloaded, unzip the archive.zip file into a local folder on your machine. At the end of this step, you should obtain a folder containing two subfolders named *mch* and *fmi*.
+Once downloaded, unzip the archive.zip file into a local folder on your machine. At the end of this step, you should obtain a folder containing two subfolders named *mch* and *fmi*. This directory must be set in the **data_paths.py** file before starting the tutorials. In that file you can also set the directory where to srite the pySTEPS output (figures, plots, forecasts, etc).
 
 Subfolders *mch* and *fmi* contain each two precipitation events. Each precipitation event includes a sequence of 40 radar precipitation fields.
 
-## B. Run the tutorial
+### 2. Run the tutorial
 Navigate to the tutorials module directory and open the first tutorial file with your preferred editor.
 Search the variable named *path_inputs*. **The path to the folder containing the input files needs to be copy/pasted to the variable at the beginning of each tutorial.**
 

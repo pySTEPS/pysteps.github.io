@@ -35,14 +35,14 @@ chmod +x Anaconda3-5.2.0-Linux-x86_64.sh
 It may happen that the command conda is not yet visible. You can either source your .bashrc file or simply log out and log in again.
 
 ### B. Installing dependencies  
-The default installation from the most recent version of Anaconda (version 5.2) should already include all necessary packages for pySTEPS. 
-
-However, we have found that in many cases, the user still needs to manually install the following libraries:
+Depending on your Anaconda distribution, some of the dependencies may already be included in your environment. We have found that most commonly there are only few remaining packages that need to be manually installed. Use the below commands to install them:
 ```
 conda install git
 conda install opencv
+conda install pillow
 conda install pyproj
 ```
+Please note that the *opencv* and *pillow* libraries correspond to the *cv2* and *PIL* python modules, respectively.
 
 If you find any other missing library when trying to run pySTEPS, simply install it with: <br/> 
 ```conda install <packagename>```

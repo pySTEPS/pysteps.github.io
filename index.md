@@ -49,6 +49,9 @@ If you find any other missing library when trying to run pySTEPS, simply install
 
 For additional information on how to manage a conda virtual environments see [Conda](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/20/conda/).
 
+You may want to use the ```configuration.yml``` file in the repo to create the conda virtual environment and install dependencies in one step by simply typing: <br/>
+```conda create -n <yourenvname> -f configuration.yml``` <br/>
+
 ### C. Downloading the pySTEPS repositories
 To download the github repositories containing the pySTEPS modules proceed as follows:
 1. Create a "pySTEPS" directory in your home folder or server

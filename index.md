@@ -1,7 +1,7 @@
 [logo]: https://avatars3.githubusercontent.com/u/40021569?s=200&v=4
 ![alt text][logo]
 
-[https://github.com/pySTEPS](https://github.com/pySTEPS)
+[https://github.com/pySTEPS](https://github.com/pySTEPS) (repository)
 
 The pySTEPS initiative  is a community that develops and maintains an easy to use, modular, free and open source python framework for short-term ensemble prediction systems.
 

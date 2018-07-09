@@ -1,3 +1,11 @@
+<div class="collapse navbar-collapse" id="plumage-navbar-collapse-1">
+<ul class="nav navbar-nav">
+<li ><a href="/">Home</a> </li>
+  <li ><a href="http://docs.wradlib.org">Documentation</a></li>
+  <li ><a href="/community/">Literature</a></li>
+  <li ><a href="/about/">About</a></li>
+</ul>
+
 [logo]: https://avatars3.githubusercontent.com/u/40021569?s=200&v=4
 ![alt text][logo]
 

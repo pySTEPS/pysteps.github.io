@@ -5,6 +5,7 @@
   <li ><a href="/community/">Literature</a></li>
   <li ><a href="/about/">About</a></li>
 </ul>
+</div>
 
 [logo]: https://avatars3.githubusercontent.com/u/40021569?s=200&v=4
 ![alt text][logo]

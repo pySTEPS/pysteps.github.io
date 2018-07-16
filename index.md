@@ -23,12 +23,14 @@ The short-course description and material are available on the [ERAD2018 website
 
 ## Quick-start guide
 It is very easy to start using *pysteps*! You need to follow these steps:
+
 A. Install the dependencies with **Anaconda**.
 B. Download (clone) the main *pysteps* repository and install it.
 
-Important:  *pysteps* is actively developed using **Python 3.6**.
+Important: *pysteps* is actively developed using **Python 3.6**.
 
 Here we will explain how to set up pySTEPS in a **linux environment**. 
+We plan to include detailed instructions for Windows and MacOS users, too. 
 
 ### A. Installing Anaconda
 It is strongly advised to install the last version of **Anaconda 3** (hence the Python 3.6 version on the download page) for optimal management of the libraries needed in *pysteps*. 
@@ -58,24 +60,26 @@ git clone https://github.com/pySTEPS/pysteps
 ```
 
 ### C. Install *pysteps* from source
-To install using pip run::
+To install using pip run:
+```
+pip install ./pysteps
+```
 
-    pip install ./pysteps
+Or, to install it using setup.py run (global installation):
+```
+python setup.py install
+```
 
-Or, to install it using setup.py run (global installation)::
+For [user installation](https://docs.python.org/2/install/#alternate-installation-the-user-scheme):
+```
+python setup.py install --user
+```
 
-    python setup.py install
+If you want to install the package in a specific directory run:
     
-For `user installation`_::
-
-    python setup.py install --user
-
-.. _user installation: \
-    https://docs.python.org/2/install/#alternate-installation-the-user-scheme
-    
-If you want to install the package in a specific directory run::
-    
-    python setup.py install --prefix=/path/to/local/dir
+```
+python setup.py install --prefix=/path/to/local/dir
+```
 
 IMPORTANT: All the dependencies need to be already installed! 
 

@@ -32,7 +32,7 @@ Important: *pysteps* is actively developed using **Python 3.6**.
 Here we will explain how to set up pySTEPS in a **linux environment**. 
 We plan to include detailed instructions for Windows and MacOS users, too. 
 
-### A. Installing Anaconda
+### A. Install Anaconda
 It is strongly advised to install the last version of **Anaconda 3** (hence the Python 3.6 version on the download page) for optimal management of the libraries needed in *pysteps*. 
 
 You can proceed as follows:
@@ -53,13 +53,12 @@ conda env create -f environment.yml
 source activate pysteps
 ```   
 
-### B. Download the main pysteps repository
-To download the github repository containing the *pysteps* modules use the following command:
+### B. Install *pysteps* from source
+To download the github repository containing the *pysteps* surce code use the following command:
 ```
 git clone https://github.com/pySTEPS/pysteps
 ```
 
-### C. Install *pysteps* from source
 To install using pip run:
 ```
 pip install ./pysteps

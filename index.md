@@ -13,18 +13,18 @@ The focus is on **probabilistic nowcasting of radar precipitation fields**, but 
 
 A first release of *pysteps* is planned for **10 August 2018**. 
 
-The code is being reorganized is [one single repository](https://github.com/pySTEPS/pysteps). At the moment the old version of *pysteps* is still available on GitHub and corresponds to the code that was used during the ERAD2018 workshop. Very soon the old repositories will be deleted and only the new version maintened.
+The code is being reorganized in [one single repository](https://github.com/pySTEPS/pysteps). At the moment the old version of *pysteps* is still available on GitHub and corresponds to the code that was used during the ERAD2018 workshop. Very soon the old repositories will be deleted and only the new version maintained.
 
 ### ERAD2018 short-course (1 July 2018, Ede-Wageningen, NL)
 
-Our first workshop using *pysteps* took place during ERAD2018. With over 30 partecipants, this was a very succesfull workshop! We would like to thank all the partecipants for their enthusiasm and commitment! 
+Our first workshop using *pysteps* took place during ERAD2018. With over 30 participants, this was a very successful workshop! We would like to thank all the participants for their enthusiasm and commitment! 
 
 The short-course description and material are available on the [ERAD2018 website](https://www.erad2018.nl/short-courses/) (search for short-course 4: *Radar-based Ensemble Precipitation Nowcasting*).
 
 ## Quick-start guide
 It is very easy to start using *pysteps*! You need to follow these steps:
 
-A. Install the dependencies with **Anaconda**.
+A. Install the dependencies with **Anaconda**. <br/>
 B. Download (clone) the main *pysteps* repository and install it.
 
 Important: *pysteps* is actively developed using **Python 3.6**.

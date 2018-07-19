@@ -90,10 +90,8 @@ IMPORTANT: All the dependencies need to be already installed!
 The tutorials are being currently updated.
 
 ## Overview of data formats
-[pysteps_formats]: https://github.com/pySTEPS/pysteps.github.io/blob/master/pySTEPS_formats.PNG
-![alt text][pysteps_formats]
+![pysteps_formats](https://github.com/pySTEPS/pysteps.github.io/blob/master/pySTEPS_formats.PNG)
 
 ## Overview of methods
-[pysteps_methods]: https://github.com/pySTEPS/pysteps.github.io/blob/master/pySTEPS_methods.PNG
-![alt text][pysteps_methods]
+![pysteps_methods](https://github.com/pySTEPS/pysteps.github.io/blob/master/pySTEPS_methods.PNG)
 

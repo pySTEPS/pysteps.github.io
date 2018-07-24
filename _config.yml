@@ -3,6 +3,8 @@ title:            pySTEPS
 description:      the nowcasting initiative
 disqus_shortname: pysteps
 share: true
+show_downloads: true
+google_analytics:
 github:
   repository_url: https://github.com/pySTEPS
 

@@ -10,7 +10,7 @@ github:
 # For external links add external: true
 links:
   - title: Quick-start guide
-    url: /quick-start
+    url: /quick-start.md
   - title: Github repository
     url: https://github.com/pySTEPS 
     external: true

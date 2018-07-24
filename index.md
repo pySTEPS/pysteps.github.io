@@ -1,8 +1,6 @@
 [logo]: https://avatars3.githubusercontent.com/u/40021569?s=200&v=4
 ![alt text][logo]
 
-[https://github.com/pySTEPS](https://github.com/pySTEPS) (repository)
-
 The pySTEPS initiative  is a community that develops and maintains an easy to use, modular, free and open source python framework for short-term ensemble prediction systems.
 
 The focus is on **probabilistic nowcasting of radar precipitation fields**, but pySTEPS is designed to allow a wider range of uses.
@@ -22,20 +20,14 @@ Our first workshop using *pysteps* took place during ERAD2018 in Ede-Wageningen,
 The short-course description and material are available on the [ERAD2018 website](https://www.erad2018.nl/short-courses/) (search for short-course 4: *Radar-based Ensemble Precipitation Nowcasting*).
 
 ## Quick-start guide
-It is very easy to start using *pysteps*! You need to follow these steps:
-
-A. Install the dependencies with **Anaconda**. <br/>
-B. Download (clone) the main *pysteps* repository and install it.
+It is very easy to start using *pysteps*! You simply need to install the dependencies with **Anaconda**, download (clone) the main *pysteps* repository and install it.
 
 Important: *pysteps* is actively developed using **Python 3.6**.
 
 Here we will explain how to set up pySTEPS in a **linux environment**. 
 We plan to include detailed instructions for Windows and MacOS users, too. 
 
-### A. Install Anaconda
 It is strongly advised to install the last version of **Anaconda 3** (hence the Python 3.6 version on the download page) for optimal management of the libraries needed in *pysteps*. 
-
-You can proceed as follows:
 
 Download the appropriate Anaconda for your platform: [https://www.anaconda.com/download/](https://www.anaconda.com/download/) 
 
@@ -57,8 +49,7 @@ Activate the virtual environment:
 source activate pysteps
 ```   
 
-### B. Install *pysteps* from source
-To download the github repository containing the *pysteps* surce code use the following command:
+To install *pysteps* from its source, download the github repository containing the *pysteps* source code use the following command:
 ```
 git clone https://github.com/pySTEPS/pysteps
 ```

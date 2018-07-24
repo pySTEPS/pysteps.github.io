@@ -3,6 +3,9 @@ title:            pySTEPS
 description:      the pySTEPS initiative
 disqus_shortname: pysteps
 
+github:
+  repository_url: https://github.com/pySTEPS
+
 # Links to include in top navigation
 # For external links add external: true
 links:

@@ -1,11 +1,27 @@
-theme: jekyll-theme-leap-day
+theme:            jekyll-theme-leap-day
 title:            pySTEPS
 description:      the nowcasting initiative
-disqus_shortname: pysteps
-share: true
+avatar:           "https://avatars3.githubusercontent.com/u/40021569?s=200&v=4"
 show_downloads: true
 google_analytics:
 github:
   repository_url: https://github.com/pySTEPS
+  
+# List of links in the navigation bar 
+navbar-links: 
+  Quick-start: "Quick-start" 
+  
+# Select which share links to show in posts 
+share-links-active: 
+  twitter: true 
+  facebook: true 
+  google: true 
+  linkedin: true 
+  
+# Google Analytics ID
+google_analytics: "UA-122857614-1" 
+
+
+
 
 

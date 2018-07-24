@@ -2,15 +2,8 @@ theme: jekyll-theme-leap-day
 title:            pySTEPS
 description:      the nowcasting initiative
 disqus_shortname: pysteps
-
+share: true
 github:
   repository_url: https://github.com/pySTEPS
 
-# Links to include in top navigation
-# For external links add external: true
-links:
-  - title: Quick-start guide
-    url: /quick-start.md
-  - title: Github repository
-    url: https://github.com/pySTEPS 
-    external: true
+

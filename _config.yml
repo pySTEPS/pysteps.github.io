@@ -1,7 +1,6 @@
 theme:            jekyll-theme-leap-day
 title:            pySTEPS
 description:      the nowcasting initiative
-avatar:           "https://avatars3.githubusercontent.com/u/40021569?s=200&v=4"
 show_downloads: false
 github:
   repository_url: https://github.com/pySTEPS/pysteps

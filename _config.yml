@@ -1,2 +1,13 @@
 theme: jekyll-theme-leap-day
-title: pySTEPS
+title:            pySTEPS
+description:      the pySTEPS initiative
+disqus_shortname: pysteps
+
+# Links to include in top navigation
+# For external links add external: true
+links:
+  - title: Quick-start guide
+    url: /quick-start
+  - title: Github repository
+    url: https://github.com/pySTEPS 
+    external: true

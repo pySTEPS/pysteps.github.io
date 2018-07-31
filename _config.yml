@@ -1,2 +1,14 @@
-theme: jekyll-theme-cayman
-title: pySTEPS
+theme:            jekyll-theme-leap-day
+title:            pySTEPS
+description:      the nowcasting initiative
+show_downloads: false
+github:
+  repository_url: https://github.com/pySTEPS/pysteps
+  
+# Google Analytics ID
+google_analytics: "UA-122857614-1" 
+
+
+
+
+

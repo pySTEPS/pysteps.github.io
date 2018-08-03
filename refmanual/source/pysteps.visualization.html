@@ -1,0 +1,535 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pysteps.visualization package &#8212; pysteps 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">pysteps 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pysteps-visualization-package">
+<h1>pysteps.visualization package<a class="headerlink" href="#pysteps-visualization-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pysteps.visualization.animations">
+<span id="pysteps-visualization-animations-module"></span><h2>pysteps.visualization.animations module<a class="headerlink" href="#module-pysteps.visualization.animations" title="Permalink to this headline">¶</a></h2>
+<p>Functions to produce animations for pysteps.</p>
+<dl class="function">
+<dt id="pysteps.visualization.animations.animate">
+<code class="descclassname">pysteps.visualization.animations.</code><code class="descname">animate</code><span class="sig-paren">(</span><em>R_obs</em>, <em>nloops=2</em>, <em>timestamps=None</em>, <em>R_fct=None</em>, <em>timestep_min=5</em>, <em>UV=None</em>, <em>motion_plot='quiver'</em>, <em>geodata=None</em>, <em>colorscale='MeteoSwiss'</em>, <em>units='mm/h'</em>, <em>colorbar=True</em>, <em>plotanimation=True</em>, <em>savefig=False</em>, <em>path_outputs=''</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.visualization.animations.animate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to animate observations and forecasts in pysteps.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>R_obs</strong> : array-like</p>
+<blockquote>
+<div><p>Three-dimensional array containing the time series of observed
+precipitation field.</p>
+</div></blockquote>
+<p><strong>nloops</strong> : int</p>
+<blockquote>
+<div><p>Optional, the number of loops in the animation.</p>
+</div></blockquote>
+<p><strong>R_fct</strong> : array-like</p>
+<blockquote>
+<div><p>Optional, the three or four-dimensional (for ensembles) array containing
+the time series of forecasted precipitation field.</p>
+</div></blockquote>
+<p><strong>timestep_min</strong> : float</p>
+<blockquote>
+<div><p>The time resolution in minutes of the forecast.</p>
+</div></blockquote>
+<p><strong>UV</strong> : array-like</p>
+<blockquote>
+<div><p>Optional, the motion field used for the forecast.</p>
+</div></blockquote>
+<p><strong>motion_plot</strong> : string</p>
+<blockquote>
+<div><p>The method to plot the motion field.</p>
+</div></blockquote>
+<p><strong>geodata</strong> : dictionary</p>
+<blockquote>
+<div><p>Optional dictionary containing geographical information about the field.
+If geodata is not None, it must contain the following key-value pairs:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>projection</td>
+<td>PROJ.4-compatible projection definition</td>
+</tr>
+<tr class="row-odd"><td>x1</td>
+<td>x-coordinate of the lower-left corner of the data
+raster (meters)</td>
+</tr>
+<tr class="row-even"><td>y1</td>
+<td>y-coordinate of the lower-left corner of the data
+raster (meters)</td>
+</tr>
+<tr class="row-odd"><td>x2</td>
+<td>x-coordinate of the upper-right corner of the data
+raster (meters)</td>
+</tr>
+<tr class="row-even"><td>y2</td>
+<td>y-coordinate of the upper-right corner of the data
+raster (meters)</td>
+</tr>
+<tr class="row-odd"><td>yorigin</td>
+<td>a string specifying the location of the first
+element in the data raster w.r.t. y-axis:
+‘upper’ = upper border, ‘lower’ = lower border</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>units</strong> : str</p>
+<blockquote>
+<div><p>Units of the input array (mm/h or dBZ)</p>
+</div></blockquote>
+<p><strong>colorscale</strong> : str</p>
+<blockquote>
+<div><p>Which colorscale to use.</p>
+</div></blockquote>
+<p><strong>title</strong> : str</p>
+<blockquote>
+<div><p>If not None, print the title on top of the plot.</p>
+</div></blockquote>
+<p><strong>colorbar</strong> : bool</p>
+<blockquote>
+<div><p>If set to True, add a colorbar on the right side of the plot.</p>
+</div></blockquote>
+<p><strong>plotanimation</strong> : bool</p>
+<blockquote>
+<div><p>If set to True, visualize the animation (useful when one is only interested
+in saving the individual frames).</p>
+</div></blockquote>
+<p><strong>savefig</strong> : bool</p>
+<blockquote>
+<div><p>If set to True, save the individual frames to path_outputs.</p>
+</div></blockquote>
+<p><strong>path_outputs</strong> : string</p>
+<blockquote>
+<div><p>Path to folder where to save the frames.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ax</strong> : fig axes</p>
+<blockquote class="last">
+<div><p>Figure axes. Needed if one wants to add e.g. text inside the plot.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pysteps.visualization.motionfields">
+<span id="pysteps-visualization-motionfields-module"></span><h2>pysteps.visualization.motionfields module<a class="headerlink" href="#module-pysteps.visualization.motionfields" title="Permalink to this headline">¶</a></h2>
+<p>Functions to plot precipitation fields.</p>
+<dl class="function">
+<dt id="pysteps.visualization.motionfields.quiver">
+<code class="descclassname">pysteps.visualization.motionfields.</code><code class="descname">quiver</code><span class="sig-paren">(</span><em>UV</em>, <em>geodata=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.visualization.motionfields.quiver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to plot a motion field as arrows.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>UV</strong> : array-like</p>
+<blockquote>
+<div><p>Array of shape (2, m,n) containing the input motion field.</p>
+</div></blockquote>
+<p><strong>geodata</strong> : dictionary</p>
+<blockquote>
+<div><p>Optional dictionary containing geographical information about the field. 
+If geodata is not None, it must contain the following key-value pairs:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>projection</td>
+<td>PROJ.4-compatible projection definition</td>
+</tr>
+<tr class="row-odd"><td>x1</td>
+<td>x-coordinate of the lower-left corner of the data
+raster (meters)</td>
+</tr>
+<tr class="row-even"><td>y1</td>
+<td>y-coordinate of the lower-left corner of the data
+raster (meters)</td>
+</tr>
+<tr class="row-odd"><td>x2</td>
+<td>x-coordinate of the upper-right corner of the data
+raster (meters)</td>
+</tr>
+<tr class="row-even"><td>y2</td>
+<td>y-coordinate of the upper-right corner of the data
+raster (meters)</td>
+</tr>
+<tr class="row-odd"><td>yorigin</td>
+<td>a string specifying the location of the first
+element in the data raster w.r.t. y-axis:
+‘upper’ = upper border, ‘lower’ = lower border</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><strong>step</strong> : int</p>
+<blockquote>
+<div><p>Optional resample step to control the density of the arrows.
+Default : 20</p>
+</div></blockquote>
+<p><strong>color</strong> : string</p>
+<blockquote class="last">
+<div><p>Optional color of the arrows. This is a synonym for the PolyCollection 
+facecolor kwarg in matplotlib.collections.
+Default : black</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pysteps.visualization.motionfields.streamplot">
+<code class="descclassname">pysteps.visualization.motionfields.</code><code class="descname">streamplot</code><span class="sig-paren">(</span><em>UV</em>, <em>geodata=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.visualization.motionfields.streamplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to plot a motion field as streamlines.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>UV</strong> : array-like</p>
+<blockquote>
+<div><p>Array of shape (2, m,n) containing the input motion field.</p>
+</div></blockquote>
+<p><strong>geodata</strong> : dictionary</p>
+<blockquote>
+<div><p>Optional dictionary containing geographical information about the field. 
+If geodata is not None, it must contain the following key-value pairs:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>projection</td>
+<td>PROJ.4-compatible projection definition</td>
+</tr>
+<tr class="row-odd"><td>x1</td>
+<td>x-coordinate of the lower-left corner of the data
+raster (meters)</td>
+</tr>
+<tr class="row-even"><td>y1</td>
+<td>y-coordinate of the lower-left corner of the data
+raster (meters)</td>
+</tr>
+<tr class="row-odd"><td>x2</td>
+<td>x-coordinate of the upper-right corner of the data
+raster (meters)</td>
+</tr>
+<tr class="row-even"><td>y2</td>
+<td>y-coordinate of the upper-right corner of the data
+raster (meters)</td>
+</tr>
+<tr class="row-odd"><td>yorigin</td>
+<td>a string specifying the location of the first
+element in the data raster w.r.t. y-axis:
+‘upper’ = upper border, ‘lower’ = lower border</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-even field"><td>&#160;</td><td class="field-body"><p class="first"><strong>density</strong> : float</p>
+<blockquote>
+<div><p>Controls the closeness of streamlines.
+Default : 1.5</p>
+</div></blockquote>
+<p><strong>color</strong> : string</p>
+<blockquote class="last">
+<div><p>Optional streamline color. This is a synonym for the PolyCollection 
+facecolor kwarg in matplotlib.collections.
+Default : black</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pysteps.visualization.precipfields">
+<span id="pysteps-visualization-precipfields-module"></span><h2>pysteps.visualization.precipfields module<a class="headerlink" href="#module-pysteps.visualization.precipfields" title="Permalink to this headline">¶</a></h2>
+<p>Methods to plot precipitation fields.</p>
+<dl class="function">
+<dt id="pysteps.visualization.precipfields.get_colormap">
+<code class="descclassname">pysteps.visualization.precipfields.</code><code class="descname">get_colormap</code><span class="sig-paren">(</span><em>units='mm/h'</em>, <em>colorscale='MeteoSwiss'</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.visualization.precipfields.get_colormap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to generate a colormap (cmap) and norm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>units</strong> : str</p>
+<blockquote>
+<div><p>Units of the input array (mm/h or dBZ)</p>
+</div></blockquote>
+<p><strong>colorscale</strong> : str</p>
+<blockquote>
+<div><p>Which colorscale to use (MeteoSwiss, STEPS-BE)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>cmap</strong> : Colormap instance</p>
+<blockquote>
+<div><p>colormap</p>
+</div></blockquote>
+<p><strong>norm</strong> : colors.Normalize object</p>
+<blockquote>
+<div><p>Colors norm</p>
+</div></blockquote>
+<p>clevs: list(float)</p>
+<blockquote>
+<div><p>List of precipitation values defining the color limits.</p>
+</div></blockquote>
+<p>clevsStr: list(str)</p>
+<blockquote class="last">
+<div><p>List of precipitation values defining the color limits (with correct number of decimals).</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pysteps.visualization.precipfields.plot_precip_field">
+<code class="descclassname">pysteps.visualization.precipfields.</code><code class="descname">plot_precip_field</code><span class="sig-paren">(</span><em>R</em>, <em>with_basemap=False</em>, <em>geodata=None</em>, <em>units='mm/h'</em>, <em>colorscale='MeteoSwiss'</em>, <em>title=None</em>, <em>colorbar=True</em>, <em>basemap_resolution='l'</em>, <em>drawlonlatlines=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.visualization.precipfields.plot_precip_field" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to plot a precipitation field with a colorbar.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>R</strong> : array-like</p>
+<blockquote>
+<div><p>Two-dimensional array containing the input precipitation field.</p>
+</div></blockquote>
+<p><strong>with_basemap</strong> : bool</p>
+<blockquote>
+<div><p>If True, plot a basemap.</p>
+</div></blockquote>
+<p><strong>geodata</strong> : dictionary</p>
+<blockquote>
+<div><p>Optional dictionary containing geographical information about the field. 
+If geodata is not None, it must contain the following key-value pairs:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Key</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>projection</td>
+<td>PROJ.4-compatible projection definition</td>
+</tr>
+<tr class="row-odd"><td>x1</td>
+<td>x-coordinate of the lower-left corner of the data
+raster (meters)</td>
+</tr>
+<tr class="row-even"><td>y1</td>
+<td>y-coordinate of the lower-left corner of the data
+raster (meters)</td>
+</tr>
+<tr class="row-odd"><td>x2</td>
+<td>x-coordinate of the upper-right corner of the data
+raster (meters)</td>
+</tr>
+<tr class="row-even"><td>y2</td>
+<td>y-coordinate of the upper-right corner of the data
+raster (meters)</td>
+</tr>
+<tr class="row-odd"><td>yorigin</td>
+<td>a string specifying the location of the first
+element in the data raster w.r.t. y-axis:
+‘upper’ = upper border, ‘lower’ = lower border</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p><strong>units</strong> : str</p>
+<blockquote>
+<div><p>Units of the input array (mm/h or dBZ)</p>
+</div></blockquote>
+<p><strong>colorscale</strong> : str</p>
+<blockquote>
+<div><p>Which colorscale to use (MeteoSwiss, STEPS-BE)</p>
+</div></blockquote>
+<p><strong>title</strong> : str</p>
+<blockquote>
+<div><p>If not None, print the title on top of the plot.</p>
+</div></blockquote>
+<p><strong>colorbar</strong> : bool</p>
+<blockquote>
+<div><p>If set to True, add a colorbar on the right side of the plot.</p>
+</div></blockquote>
+<p><strong>basemap_resolution</strong> : str</p>
+<blockquote>
+<div><p>The resolution of the basemap, see the documentation of mpl_toolkits.basemap. 
+Applicable if with_basemap is True.</p>
+</div></blockquote>
+<p><strong>drawlonlatlines</strong> : bool</p>
+<blockquote>
+<div><p>If set to True, draw longitude and latitude lines. Applicable if 
+with_basemap is True.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ax</strong> : fig axes</p>
+<blockquote class="last">
+<div><p>Figure axes. Needed if one wants to add e.g. text inside the plot.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pysteps.visualization.utils">
+<span id="pysteps-visualization-utils-module"></span><h2>pysteps.visualization.utils module<a class="headerlink" href="#module-pysteps.visualization.utils" title="Permalink to this headline">¶</a></h2>
+<p>Miscellaneous utility functions.</p>
+<dl class="function">
+<dt id="pysteps.visualization.utils.parse_proj4_string">
+<code class="descclassname">pysteps.visualization.utils.</code><code class="descname">parse_proj4_string</code><span class="sig-paren">(</span><em>proj4str</em>, <em>parse_type='default'</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.visualization.utils.parse_proj4_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a dictionary from a proj 4 string.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>proj4str</strong> : str</p>
+<blockquote>
+<div><p>A proj.4-compatible projection string.</p>
+</div></blockquote>
+<p><strong>parse_type</strong> : str</p>
+<blockquote>
+<div><p>The valid options are ‘default’=take each token (beginning with ‘+’) in 
+proj4str as is, ‘basemap’=convert the keys to be compatible with Basemap.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : dict</p>
+<blockquote class="last">
+<div><p>Dictionary, where keys and values are parsed from the projection parameter 
+tokens beginning with ‘+’.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pysteps.visualization">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pysteps.visualization" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="index.html">pysteps 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Seppo Pulkkinen, Daniele Nerini and Loris Foresti.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

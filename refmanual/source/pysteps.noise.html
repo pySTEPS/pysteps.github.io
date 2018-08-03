@@ -1,0 +1,672 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pysteps.noise package &#8212; pysteps 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Post-processing of forecasts (pysteps.postprocessing)" href="postprocessing.html" />
+    <link rel="prev" title="Noise generators (pysteps.noise)" href="noise.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="postprocessing.html" title="Post-processing of forecasts (pysteps.postprocessing)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="noise.html" title="Noise generators (pysteps.noise)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pysteps 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="noise.html" accesskey="U">Noise generators (pysteps.noise)</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pysteps-noise-package">
+<h1>pysteps.noise package<a class="headerlink" href="#pysteps-noise-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pysteps.noise.fftgenerators">
+<span id="pysteps-noise-fftgenerators-module"></span><h2>pysteps.noise.fftgenerators module<a class="headerlink" href="#module-pysteps.noise.fftgenerators" title="Permalink to this headline">¶</a></h2>
+<p>Methods for noise generators based on FFT filtering of white noise.</p>
+<p>The methods in this module implement the following interface for filter 
+initialization depending on their parametric or nonparametric nature:</p>
+<blockquote>
+<div><p>initialize_param_2d_xxx_filter(X, keyword arguments)</p>
+<p>or</p>
+<p>initialize_nonparam_2d_xxx_filter(X, keyword arguments)</p>
+</div></blockquote>
+<p>where X (m, n) is the target field and the optional keyword arguments are included 
+in a dictionary. 
+The output of each initialization method is a two-dimensional array containing 
+the filter F of shape (m, n).</p>
+<p>The methods in this module implement the following interface for the generation
+of correlated noise:</p>
+<blockquote>
+<div>generate_noise_2d_xxx_filter(F, randstate=np.random, seed=None)</div></blockquote>
+<p>where F (m, n) is a filter returned from an initialization method, and randstate 
+and seed can be used to set the random generator and its seed. Additional 
+keyword arguments can be included as a dictionary.
+The output of each generator method is a two-dimensional array containing the 
+field of correlated noise cN of shape (m, n).</p>
+<dl class="function">
+<dt id="pysteps.noise.fftgenerators.build_2D_tapering_function">
+<code class="descclassname">pysteps.noise.fftgenerators.</code><code class="descname">build_2D_tapering_function</code><span class="sig-paren">(</span><em>win_size</em>, <em>win_type='flat-hanning'</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.noise.fftgenerators.build_2D_tapering_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produces two-dimensional tapering function for rectangular fields.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>win_size</strong> : tuple of int</p>
+<blockquote>
+<div><p>Size of the tapering window as two-element tuple of integers.</p>
+</div></blockquote>
+<p><strong>win_type</strong> : str</p>
+<blockquote>
+<div><p>Name of the tapering window type (hanning, flat-hanning)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>w2d</strong> : array-like</p>
+<blockquote class="last">
+<div><p>A two-dimensional numpy array containing the 2D tapering function.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pysteps.noise.fftgenerators.generate_noise_2d_fft_filter">
+<code class="descclassname">pysteps.noise.fftgenerators.</code><code class="descname">generate_noise_2d_fft_filter</code><span class="sig-paren">(</span><em>F</em>, <em>randstate=&lt;module 'numpy.random' from '/usr/lib/python3/dist-packages/numpy/random/__init__.py'&gt;</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.noise.fftgenerators.generate_noise_2d_fft_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produces a field of correlated noise using global Fourier filtering.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>F</strong> : array-like</p>
+<blockquote>
+<div><p>Two-dimensional array containing the input filter. 
+It can be computed by related methods.
+All values are required to be finite.</p>
+</div></blockquote>
+<p><strong>randstate</strong> : mtrand.RandomState</p>
+<blockquote>
+<div><p>Optional random generator to use. If set to None, use numpy.random.</p>
+</div></blockquote>
+<p><strong>seed</strong> : int</p>
+<blockquote>
+<div><p>Value to set a seed for the generator. None will not set the seed.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>N</strong> : array-like</p>
+<blockquote class="last">
+<div><p>A two-dimensional numpy array of stationary correlated noise.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pysteps.noise.fftgenerators.generate_noise_2d_ssft_filter">
+<code class="descclassname">pysteps.noise.fftgenerators.</code><code class="descname">generate_noise_2d_ssft_filter</code><span class="sig-paren">(</span><em>F</em>, <em>randstate=&lt;module 'numpy.random' from '/usr/lib/python3/dist-packages/numpy/random/__init__.py'&gt;</em>, <em>seed=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.noise.fftgenerators.generate_noise_2d_ssft_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to compute the locally correlated noise using a nested approach.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>F</strong> : array-like</p>
+<blockquote>
+<div><p>Four-dimensional array containing the 2d fourier filters distributed over
+a 2d spatial grid.</p>
+</div></blockquote>
+<p><strong>randstate</strong> : mtrand.RandomState</p>
+<blockquote>
+<div><p>Optional random generator to use. If set to None, use numpy.random.</p>
+</div></blockquote>
+<p><strong>seed</strong> : int</p>
+<blockquote>
+<div><p>Value to set a seed for the generator. None will not set the seed.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>N</strong> : array-like</p>
+<blockquote>
+<div><p>A two-dimensional numpy array of non-stationary correlated noise.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><strong>overlap</strong> : float</p>
+<blockquote>
+<div><p>Percentage overlap [0-1] between successive windows.
+Default : 0.2</p>
+</div></blockquote>
+<p><strong>win_type</strong> : string [‘hanning’, ‘flat-hanning’]</p>
+<blockquote class="last">
+<div><p>Type of window used for localization.
+Default : flat-hanning</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pysteps.noise.fftgenerators.initialize_nonparam_2d_fft_filter">
+<code class="descclassname">pysteps.noise.fftgenerators.</code><code class="descname">initialize_nonparam_2d_fft_filter</code><span class="sig-paren">(</span><em>X</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.noise.fftgenerators.initialize_nonparam_2d_fft_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a 2d input field and produces a fourier filter by using the Fast 
+Fourier Transform (FFT).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : array-like</p>
+<blockquote>
+<div><p>Two-dimensional array containing the input field. All values are required 
+to be finite.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>F</strong> : array-like</p>
+<blockquote>
+<div><p>A two-dimensional array containing the non-parametric filter.
+It can be passed to generate_noise_2d_fft_filter().</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><strong>win_type</strong> : string</p>
+<blockquote>
+<div><p>Optional tapering function to be applied to X.
+Default : flat-hanning</p>
+</div></blockquote>
+<p><strong>donorm</strong> : bool</p>
+<blockquote class="last">
+<div><p>Option to normalize the real and imaginary parts.
+Default : False</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pysteps.noise.fftgenerators.initialize_nonparam_2d_nested_filter">
+<code class="descclassname">pysteps.noise.fftgenerators.</code><code class="descname">initialize_nonparam_2d_nested_filter</code><span class="sig-paren">(</span><em>X</em>, <em>gridres=1.0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.noise.fftgenerators.initialize_nonparam_2d_nested_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to compute the local Fourier filters using a nested approach.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : array-like</p>
+<blockquote>
+<div><p>Two-dimensional array containing the input field. All values are required 
+to be finite and the domain must be square.</p>
+</div></blockquote>
+<p><strong>gridres</strong> : float</p>
+<blockquote>
+<div><p>Grid resolution in km.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>F</strong> : array-like</p>
+<blockquote>
+<div><p>Four-dimensional array containing the 2d fourier filters distributed over
+a 2d spatial grid.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><strong>max_level</strong> : int</p>
+<blockquote>
+<div><p>Localization parameter. 0: global noise, &gt;0: increasing degree of localization.
+Default : 3</p>
+</div></blockquote>
+<p><strong>win_type</strong> : string [‘hanning’, ‘flat-hanning’]</p>
+<blockquote>
+<div><p>Type of window used for localization.
+Default : flat-hanning</p>
+</div></blockquote>
+<p><strong>war_thr</strong> : float [0;1]</p>
+<blockquote class="last">
+<div><p>Threshold for the minimum fraction of rain needed for computing the FFT.
+Default : 0.1</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pysteps.noise.fftgenerators.initialize_nonparam_2d_ssft_filter">
+<code class="descclassname">pysteps.noise.fftgenerators.</code><code class="descname">initialize_nonparam_2d_ssft_filter</code><span class="sig-paren">(</span><em>X</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.noise.fftgenerators.initialize_nonparam_2d_ssft_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to compute the local Fourier filters using the Short-Space Fourier
+filtering approach.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : array-like</p>
+<blockquote>
+<div><p>Two-dimensional array containing the input field. All values are required 
+to be finite.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>F</strong> : array-like</p>
+<blockquote>
+<div><p>Four-dimensional array containing the 2d fourier filters distributed over
+a 2d spatial grid.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><strong>win_size</strong> : int or two-element tuple of ints</p>
+<blockquote>
+<div><p>Size-length of the window to compute the SSFT.
+Default : (128, 128)</p>
+</div></blockquote>
+<p><strong>win_type</strong> : string [‘hanning’, ‘flat-hanning’]</p>
+<blockquote>
+<div><p>Type of window used for localization.
+Default : flat-hanning</p>
+</div></blockquote>
+<p><strong>overlap</strong> : float [0,1[</p>
+<blockquote>
+<div><p>The proportion of overlap to be applied between successive windows.
+Default : 0.3</p>
+</div></blockquote>
+<p><strong>war_thr</strong> : float [0,1]</p>
+<blockquote class="last">
+<div><p>Threshold for the minimum fraction of rain needed for computing the FFT.
+Default : 0.1</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pysteps.noise.fftgenerators.initialize_param_2d_fft_filter">
+<code class="descclassname">pysteps.noise.fftgenerators.</code><code class="descname">initialize_param_2d_fft_filter</code><span class="sig-paren">(</span><em>X</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.noise.fftgenerators.initialize_param_2d_fft_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a 2d input field and produces a fourier filter by using the Fast 
+Fourier Transform (FFT).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : array-like</p>
+<blockquote>
+<div><p>Two-dimensional array containing the input field. All values are 
+required to be finite.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>F</strong> : array-like</p>
+<blockquote>
+<div><p>A two-dimensional array containing the parametric filter.
+It can be passed to generate_noise_2d_fft_filter().</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><strong>win_type</strong> : string</p>
+<blockquote>
+<div><p>Optional tapering function to be applied to X.
+Default : flat-hanning</p>
+</div></blockquote>
+<p><strong>model</strong> : string</p>
+<blockquote>
+<div><p>The parametric model to be used to fit the power spectrum of X.
+Default : power-law</p>
+</div></blockquote>
+<p><strong>weighted</strong> : bool</p>
+<blockquote>
+<div><p>Whether or not to apply the sqrt(power) as weight in the polyfit() function.
+Default : True</p>
+</div></blockquote>
+<p><strong>doplot</strong> : bool</p>
+<blockquote class="last">
+<div><p>Plot the fit.
+Default : False</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pysteps.noise.interface">
+<span id="pysteps-noise-interface-module"></span><h2>pysteps.noise.interface module<a class="headerlink" href="#module-pysteps.noise.interface" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pysteps.noise.interface.get_method">
+<code class="descclassname">pysteps.noise.interface.</code><code class="descname">get_method</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.noise.interface.get_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return two callable functions to initialize and generate 2d perturbations
+of precipitation  or velocity fields.</p>
+<p>Methods for precipitation fields:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>parametric</td>
+<td>this global generator uses parametric Fourier
+filering (power-law model)</td>
+</tr>
+<tr class="row-odd"><td>nonparametric</td>
+<td>this global generator uses nonparametric Fourier
+filering</td>
+</tr>
+<tr class="row-even"><td>ssft</td>
+<td>this local generator uses the short-space Fourier
+filtering</td>
+</tr>
+<tr class="row-odd"><td>nested</td>
+<td>this local generator uses a nested Fourier filtering</td>
+</tr>
+</tbody>
+</table>
+<p>Methods for velocity fields:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>bps</td>
+<td>The method of Bowler et al. (2006), where
+time-dependent velocity perturbations are sampled
+from the exponential distribution</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pysteps.noise.motion">
+<span id="pysteps-noise-motion-module"></span><h2>pysteps.noise.motion module<a class="headerlink" href="#module-pysteps.noise.motion" title="Permalink to this headline">¶</a></h2>
+<p>Methods for generating perturbations of two-dimensional motion fields.</p>
+<p>The methods in this module implement the following interface for initialization:</p>
+<blockquote>
+<div>inizialize_xxx(V, pixelsperkm, timestep, optional arguments)</div></blockquote>
+<p>where V (2,m,n) is the motion field and pixelsperkm and timestep describe the 
+spatial and temporal resolution of the motion vectors.
+The output of each initialization method is a dictionary containing the perturbator 
+that can be supplied to generate_xxx.</p>
+<p>The methods in this module implement the following interface for the generation
+of a motion perturbation field:</p>
+<blockquote>
+<div>generate_xxx(perturbator, t, randstate=np.random, seed=None)</div></blockquote>
+<p>where perturbator is a dictionary returned by an initialize_xxx method. Optional 
+random generator can be specified with the randstate and seed arguments, 
+respectively.
+The output of each generator method is an array of shape (2,m,n) containing the 
+x- and y-components of the motion vector perturbations, where m and n are 
+determined from the perturbator.</p>
+<dl class="function">
+<dt id="pysteps.noise.motion.generate_bps">
+<code class="descclassname">pysteps.noise.motion.</code><code class="descname">generate_bps</code><span class="sig-paren">(</span><em>perturbator</em>, <em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.noise.motion.generate_bps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a motion perturbation field by using the method described in 
+Bowler et al. 2006: STEPS: A probabilistic precipitation forecasting scheme 
+which merges an extrapolation nowcast with downscaled NWP.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>perturbator</strong> : dict</p>
+<blockquote>
+<div><p>A dictionary returned by initialize_motion_perturbations_bps.</p>
+</div></blockquote>
+<p><strong>t</strong> : float</p>
+<blockquote>
+<div><p>Lead time for the perturbation field (minutes).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<blockquote class="last">
+<div><p>Array of shape (2,m,n) containing the x- and y-components of the motion 
+vector perturbations, where m and n are determined from the perturbator.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pysteps.noise.motion.initialize_bps">
+<code class="descclassname">pysteps.noise.motion.</code><code class="descname">initialize_bps</code><span class="sig-paren">(</span><em>V</em>, <em>pixelsperkm</em>, <em>timestep</em>, <em>p_pert_par=(10.88</em>, <em>0.23</em>, <em>-7.68)</em>, <em>p_pert_perp=(5.76</em>, <em>0.31</em>, <em>-2.72)</em>, <em>randstate=&lt;module 'numpy.random' from '/usr/lib/python3/dist-packages/numpy/random/__init__.py'&gt;</em>, <em>seed=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.noise.motion.initialize_bps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize the motion field perturbator described in Bowler et al. 
+2006: STEPS: A probabilistic precipitation forecasting scheme which merges 
+an extrapolation nowcast with downscaled NWP. For simplicity, the bias 
+adjustment procedure described in the above reference has not been 
+implemented. The perturbator generates a constant field whose magnitude 
+depends on lead time, see generate_motion_perturbations_bps.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>V</strong> : array_like</p>
+<blockquote>
+<div><p>Array of shape (2,m,n) containing the x- and y-components of the m*n 
+motion field to perturb.</p>
+</div></blockquote>
+<p><strong>p_pert_par</strong> : tuple</p>
+<blockquote>
+<div><p>Tuple containing the parameters a,b and c for the standard deviation of 
+the perturbations in the direction parallel to the motion vectors. The 
+standard deviations are modeled by the function f_par(t) = a*t^b+c, where 
+t is lead time. The default values are taken from Bowler et al. 2006.</p>
+</div></blockquote>
+<p><strong>p_pert_perp</strong> : tuple</p>
+<blockquote>
+<div><p>Tuple containing the parameters a,b and c for the standard deviation of 
+the perturbations in the direction perpendicular to the motion vectors. 
+The standard deviations are modeled by the function f_par(t) = a*t^b+c, 
+where t is lead time. The default values are taken from Bowler et al. 2006.</p>
+</div></blockquote>
+<p><strong>pixelsperkm</strong> : float</p>
+<blockquote>
+<div><p>Spatial resolution of the motion field (pixels/kilometer).</p>
+</div></blockquote>
+<p><strong>timestep</strong> : float</p>
+<blockquote>
+<div><p>Time step for the motion vectors (minutes).</p>
+</div></blockquote>
+<p><strong>randstate</strong> : mtrand.RandomState</p>
+<blockquote>
+<div><p>Optional random generator to use. If set to None, use numpy.random.</p>
+</div></blockquote>
+<p><strong>seed</strong> : int</p>
+<blockquote>
+<div><p>Optional seed number for the random generator.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : dict</p>
+<blockquote class="last">
+<div><p>A dictionary containing the perturbator that can be supplied to 
+generate_motion_perturbations_bps.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pysteps.noise.utils">
+<span id="pysteps-noise-utils-module"></span><h2>pysteps.noise.utils module<a class="headerlink" href="#module-pysteps.noise.utils" title="Permalink to this headline">¶</a></h2>
+<p>Miscellaneous utility functions related to generating stochastic perturbations.</p>
+<dl class="function">
+<dt id="pysteps.noise.utils.compute_noise_stddev_adjs">
+<code class="descclassname">pysteps.noise.utils.</code><code class="descname">compute_noise_stddev_adjs</code><span class="sig-paren">(</span><em>R</em>, <em>R_thr_1</em>, <em>R_thr_2</em>, <em>F</em>, <em>decomp_method</em>, <em>num_iter</em>, <em>conditional=True</em>, <em>num_workers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.noise.utils.compute_noise_stddev_adjs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulate the effect of applying a precipitation mask to a Gaussian noise 
+field obtained by the nonparametric filter method. The idea is to decompose 
+the masked noise field into a cascade and compare the standard deviations of 
+each level into those of the observed precipitation intensity field. This 
+gives correction factors for the standard deviations (Bowler et al. 2006). 
+The calculations are done for n realizations of the noise field, and the 
+correction factors are calculated from the average values of the standard 
+deviations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>R</strong> : array_like</p>
+<blockquote>
+<div><p>The input precipitation field, assumed to be in logarithmic units 
+(dBR or reflectivity).</p>
+</div></blockquote>
+<p><strong>R_thr_1</strong> : float</p>
+<blockquote>
+<div><p>Intensity threshold for precipitation/no precipitation.</p>
+</div></blockquote>
+<p><strong>R_thr_2</strong> : float</p>
+<blockquote>
+<div><p>Intensity values below R_thr_1 are set to this value.</p>
+</div></blockquote>
+<p><strong>F</strong> : dict</p>
+<blockquote>
+<div><p>A bandpass filter dictionary returned by a method defined in 
+pysteps.cascade.bandpass_filters. This defines the filter to use and 
+the number of cascade levels.</p>
+</div></blockquote>
+<p><strong>decomp_method</strong> : function</p>
+<blockquote>
+<div><p>A function defined in pysteps.cascade.decomposition. Specifies the 
+method to use for decomposing the observed precipitation field and 
+noise field into different spatial scales.</p>
+</div></blockquote>
+<p><strong>num_iter</strong> : int</p>
+<blockquote>
+<div><p>The number of noise fields to generate.</p>
+</div></blockquote>
+<p><strong>conditional</strong> : bool</p>
+<blockquote>
+<div><p>If set to True, compute the statistics conditionally by excluding areas 
+of no precipitation.</p>
+</div></blockquote>
+<p><strong>num_workers</strong> : int</p>
+<blockquote>
+<div><p>The number of workers to use for parallel computation. Set to None to use 
+all available CPUs. Applicable if dask is enabled.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list</p>
+<blockquote class="last">
+<div><p>A list containing the standard deviation adjustment factor for each 
+cascade level.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pysteps.noise">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pysteps.noise" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="noise.html"
+                        title="previous chapter">Noise generators (pysteps.noise)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="postprocessing.html"
+                        title="next chapter">Post-processing of forecasts (pysteps.postprocessing)</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="postprocessing.html" title="Post-processing of forecasts (pysteps.postprocessing)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="noise.html" title="Noise generators (pysteps.noise)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pysteps 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="noise.html" >Noise generators (pysteps.noise)</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Seppo Pulkkinen, Daniele Nerini and Loris Foresti.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

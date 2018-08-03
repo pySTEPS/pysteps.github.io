@@ -1,0 +1,375 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pysteps.nowcasts package &#8212; pysteps 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Input/output routines (pysteps.io)" href="io.html" />
+    <link rel="prev" title="Nowcasting methods (pysteps.nowcasts)" href="nowcasting.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="io.html" title="Input/output routines (pysteps.io)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="nowcasting.html" title="Nowcasting methods (pysteps.nowcasts)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pysteps 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="nowcasting.html" accesskey="U">Nowcasting methods (pysteps.nowcasts)</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pysteps-nowcasts-package">
+<h1>pysteps.nowcasts package<a class="headerlink" href="#pysteps-nowcasts-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pysteps.nowcasts.interface">
+<span id="pysteps-nowcasts-interface-module"></span><h2>pysteps.nowcasts.interface module<a class="headerlink" href="#module-pysteps.nowcasts.interface" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pysteps.nowcasts.interface.get_method">
+<code class="descclassname">pysteps.nowcasts.interface.</code><code class="descname">get_method</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.nowcasts.interface.get_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return one callable function to produce deterministic or ensemble 
+precipitation nowcasts.</p>
+<p>Methods for precipitation nowcasting:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>eulerian</td>
+<td>this approach simply keeps the last observation
+frozen (Eulerian persistence)</td>
+</tr>
+<tr class="row-odd"><td>lagrangian or
+extrapolation</td>
+<td>this approach extrapolate the last observation
+following the motion field (Lagrangian persistence)</td>
+</tr>
+<tr class="row-even"><td>steps</td>
+<td>implementation of the STEPS stochastic nowcasting
+method as described in Seed (2003), Bowler et al
+(2006) and Seed et al (2013)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pysteps.nowcasts.simple_advection">
+<span id="pysteps-nowcasts-simple-advection-module"></span><h2>pysteps.nowcasts.simple_advection module<a class="headerlink" href="#module-pysteps.nowcasts.simple_advection" title="Permalink to this headline">¶</a></h2>
+<p>Implementations of deterministic nowcasting methods.</p>
+<dl class="function">
+<dt id="pysteps.nowcasts.simple_advection.forecast">
+<code class="descclassname">pysteps.nowcasts.simple_advection.</code><code class="descname">forecast</code><span class="sig-paren">(</span><em>R</em>, <em>V</em>, <em>num_timesteps</em>, <em>extrap_method='semilagrangian'</em>, <em>extrap_kwargs={}</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.nowcasts.simple_advection.forecast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a nowcast by applying a simple advection-based extrapolation to 
+the given precipitation field.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>R</strong> : array-like</p>
+<blockquote>
+<div><p>Two-dimensional array of shape (m,n) containing the input precipitation 
+field.</p>
+</div></blockquote>
+<p><strong>V</strong> : array-like</p>
+<blockquote>
+<div><p>Array of shape (2,m,n) containing the x- and y-components of the advection 
+field. The velocities are assumed to represent one time step.</p>
+</div></blockquote>
+<p><strong>num_timesteps</strong> : int</p>
+<blockquote>
+<div><p>Number of time steps to forecast.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<blockquote>
+<div><p>Three-dimensional array of shape (num_timesteps,m,n) containing a time 
+series of nowcast precipitation fields.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><strong>extrap_method</strong> : str</p>
+<blockquote>
+<div><p>Name of the extrapolation method to use. See the documentation of the 
+advection module for the available choices.</p>
+</div></blockquote>
+<p><strong>extrap_kwargs</strong> : dict</p>
+<blockquote class="last">
+<div><p>Optional dictionary that is supplied as keyword arguments to the 
+extrapolation method.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pysteps.nowcasts.steps">
+<span id="pysteps-nowcasts-steps-module"></span><h2>pysteps.nowcasts.steps module<a class="headerlink" href="#module-pysteps.nowcasts.steps" title="Permalink to this headline">¶</a></h2>
+<p>Implementation of the STEPS method.</p>
+<dl class="function">
+<dt id="pysteps.nowcasts.steps.forecast">
+<code class="descclassname">pysteps.nowcasts.steps.</code><code class="descname">forecast</code><span class="sig-paren">(</span><em>R</em>, <em>V</em>, <em>num_timesteps</em>, <em>num_ens_members</em>, <em>num_cascade_levels</em>, <em>pixelsperkm</em>, <em>timestep</em>, <em>R_thr=None</em>, <em>extrap_method='semilagrangian'</em>, <em>decomp_method='fft'</em>, <em>bandpass_filter_method='gaussian'</em>, <em>noise_method='nonparametric'</em>, <em>noise_stddev_adj=True</em>, <em>ar_order=2</em>, <em>vel_pert_method=None</em>, <em>conditional=False</em>, <em>use_precip_mask=True</em>, <em>use_probmatching=True</em>, <em>mask_method='obs'</em>, <em>callback=None</em>, <em>return_output=True</em>, <em>seed=None</em>, <em>num_workers=None</em>, <em>extrap_kwargs={}</em>, <em>filter_kwargs={}</em>, <em>noise_kwargs={}</em>, <em>vel_pert_kwargs={}</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.nowcasts.steps.forecast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a nowcast ensemble by using the STEPS method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>R</strong> : array-like</p>
+<blockquote>
+<div><p>Array of shape (ar_order+1,m,n) containing the input precipitation fields 
+ordered by timestamp from oldest to newest. The time steps between the inputs 
+are assumed to be regular, and the inputs are required to have finite values.</p>
+</div></blockquote>
+<p><strong>V</strong> : array-like</p>
+<blockquote>
+<div><p>Array of shape (2,m,n) containing the x- and y-components of the advection 
+field. The velocities are assumed to represent one time step between the 
+inputs. All values are required to be finite.</p>
+</div></blockquote>
+<p><strong>num_timesteps</strong> : int</p>
+<blockquote>
+<div><p>Number of time steps to forecast.</p>
+</div></blockquote>
+<p><strong>num_ens_members</strong> : int</p>
+<blockquote>
+<div><p>The number of ensemble members to generate.</p>
+</div></blockquote>
+<p><strong>num_cascade_levels</strong> : int</p>
+<blockquote>
+<div><p>The number of cascade levels to use.</p>
+</div></blockquote>
+<p><strong>pixelsperkm</strong> : float</p>
+<blockquote>
+<div><p>Spatial resolution of the motion field (pixels/kilometer).</p>
+</div></blockquote>
+<p><strong>timestep</strong> : float</p>
+<blockquote>
+<div><p>Time step of the motion vectors (minutes).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<blockquote>
+<div><p>If return_output is True, a four-dimensional array of shape 
+(num_ens_members,num_timesteps,m,n) containing a time series of forecast 
+precipitation fields for each ensemble member. Otherwise, a None value 
+is returned.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><strong>R_thr</strong> : float</p>
+<blockquote>
+<div><p>Specifies the threshold value for minimum observable precipitation 
+intensity. Must be set if use_probmatching is True or conditional is True.</p>
+</div></blockquote>
+<p><strong>extrap_method</strong> : str</p>
+<blockquote>
+<div><p>Name of the extrapolation method to use. See the documentation of 
+pysteps.advection for the available choices.</p>
+</div></blockquote>
+<p><strong>decomp_method</strong> : str</p>
+<blockquote>
+<div><p>Name of the cascade decomposition method to use. See the documentation 
+of pysteps.cascade.decomposition.</p>
+</div></blockquote>
+<p><strong>bandpass_filter_method</strong> : str</p>
+<blockquote>
+<div><p>Name of the bandpass filter method to use with the cascade decomposition. 
+See the documentation of pysteps.cascade.bandpass_filters.</p>
+</div></blockquote>
+<p><strong>noise_method</strong> : str</p>
+<blockquote>
+<div><p>Name of the noise generator to use for perturbating the precipitation 
+field. See the documentation of pysteps.noise.interface.</p>
+</div></blockquote>
+<p><strong>noise_stddev_adj</strong> : bool</p>
+<blockquote>
+<div><p>Optional adjustment for the standard deviations of the noise fields added 
+to each cascade level. See pysteps.noise.utils.compute_noise_stddev_adjs.</p>
+</div></blockquote>
+<p><strong>ar_order</strong> : int</p>
+<blockquote>
+<div><p>The order of the autoregressive model to use.</p>
+</div></blockquote>
+<p><strong>vel_pert_method</strong> : str</p>
+<blockquote>
+<div><p>Name of the noise generator to use for perturbing the velocity field. See 
+the documentation of pysteps.noise.interface.</p>
+</div></blockquote>
+<p><strong>conditional</strong> : bool</p>
+<blockquote>
+<div><p>If set to True, compute the statistics of the precipitation field 
+conditionally by excluding the areas where the values are below the 
+threshold R_thr.</p>
+</div></blockquote>
+<p><strong>use_precip_mask</strong> : bool</p>
+<blockquote>
+<div><p>If True, set pixels outside precipitation areas to the minimum value of 
+the observed field.</p>
+</div></blockquote>
+<p><strong>mask_method</strong> : str</p>
+<blockquote>
+<div><p>The precipitation/no precipitation method to use with mask: ‘obs’ = apply R_thr
+to the most recently observed precipitation intensity field, ‘sprog’ = use the
+smoothed forecast field from S-PROG, where the AR(p) model has been applied,
+‘incremental’ = iteratively buffer the mask with a certain rate (currently
+it is 1 km/min)</p>
+</div></blockquote>
+<p><strong>use_probmatching</strong> : bool</p>
+<blockquote>
+<div><p>If True, apply probability matching to the forecast field in order to 
+preserve the distribution of the most recently observed precipitation 
+field.</p>
+</div></blockquote>
+<p><strong>callback</strong> : function</p>
+<blockquote>
+<div><p>Optional function that is called after computation of each time step of 
+the nowcast. The function takes one argument: a three-dimensional array 
+of shape (num_ens_members,h,w), where h and w are the height and width 
+of the input field R, respectively. This can be used, for instance, 
+writing the outputs into files.</p>
+</div></blockquote>
+<p><strong>return_output</strong> : bool</p>
+<blockquote>
+<div><p>Set to False to disable returning the outputs as numpy arrays. This can 
+save memory if the intermediate results are written to output files using 
+the callback function.</p>
+</div></blockquote>
+<p><strong>seed</strong> : int</p>
+<blockquote>
+<div><p>Optional seed number for the random generators.</p>
+</div></blockquote>
+<p><strong>num_workers</strong> : int</p>
+<blockquote>
+<div><p>The number of workers to use for parallel computation. Set to None to use 
+all available CPUs. Applicable if dask is enabled.</p>
+</div></blockquote>
+<p><strong>extrap_kwargs</strong> : dict</p>
+<blockquote>
+<div><p>Optional dictionary that is supplied as keyword arguments to the 
+extrapolation method.</p>
+</div></blockquote>
+<p><strong>filter_kwargs</strong> : dict</p>
+<blockquote>
+<div><p>Optional dictionary that is supplied as keyword arguments to the 
+filter method.</p>
+</div></blockquote>
+<p><strong>noise_kwargs</strong> : dict</p>
+<blockquote>
+<div><p>Optional dictionary that is supplied as keyword arguments to the 
+initializer of the noise generator. See the documentation of 
+pysteps.noise.fftgenerators.</p>
+</div></blockquote>
+<p><strong>vel_pert_kwargs</strong> : dict</p>
+<blockquote class="last">
+<div><p>Optional dictionary that is supplied as keyword arguments to the 
+initializer of the velocity perturbator. See the documentation of 
+pysteps.noise.motion.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<p>Bowler et al. (2006): STEPS: A probabilistic precipitation forecasting scheme 
+which merges an extrapolation nowcast with downscaled NWP.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pysteps.nowcasts">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pysteps.nowcasts" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="nowcasting.html"
+                        title="previous chapter">Nowcasting methods (pysteps.nowcasts)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="io.html"
+                        title="next chapter">Input/output routines (pysteps.io)</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="io.html" title="Input/output routines (pysteps.io)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="nowcasting.html" title="Nowcasting methods (pysteps.nowcasts)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pysteps 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="nowcasting.html" >Nowcasting methods (pysteps.nowcasts)</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Seppo Pulkkinen, Daniele Nerini and Loris Foresti.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

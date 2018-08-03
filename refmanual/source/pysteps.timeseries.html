@@ -1,0 +1,242 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pysteps.timeseries package &#8212; pysteps 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Miscellaneous utility functions (pysteps.utils)" href="utils.html" />
+    <link rel="prev" title="Time series modeling and analysis (pysteps.timeseries)" href="timeseries.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="utils.html" title="Miscellaneous utility functions (pysteps.utils)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="timeseries.html" title="Time series modeling and analysis (pysteps.timeseries)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pysteps 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="timeseries.html" accesskey="U">Time series modeling and analysis (pysteps.timeseries)</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pysteps-timeseries-package">
+<h1>pysteps.timeseries package<a class="headerlink" href="#pysteps-timeseries-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pysteps.timeseries.autoregression">
+<span id="pysteps-timeseries-autoregression-module"></span><h2>pysteps.timeseries.autoregression module<a class="headerlink" href="#module-pysteps.timeseries.autoregression" title="Permalink to this headline">¶</a></h2>
+<p>Methods related to autoregressive AR(p) models.</p>
+<dl class="function">
+<dt id="pysteps.timeseries.autoregression.adjust_lag2_corrcoef">
+<code class="descclassname">pysteps.timeseries.autoregression.</code><code class="descname">adjust_lag2_corrcoef</code><span class="sig-paren">(</span><em>gamma_1</em>, <em>gamma_2</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.timeseries.autoregression.adjust_lag2_corrcoef" title="Permalink to this definition">¶</a></dt>
+<dd><p>A simple adjustment of lag-2 temporal autocorrelation coefficient to 
+ensure that the resulting AR(2) process is stationary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>gamma_1</strong> : float</p>
+<blockquote>
+<div><p>Lag-1 temporal autocorrelation coeffient.</p>
+</div></blockquote>
+<p><strong>gamma_2</strong> : float</p>
+<blockquote>
+<div><p>Lag-2 temporal autocorrelation coeffient.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : float</p>
+<blockquote class="last">
+<div><p>The adjusted lag-2 correlation coefficient.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pysteps.timeseries.autoregression.estimate_ar_params_yw">
+<code class="descclassname">pysteps.timeseries.autoregression.</code><code class="descname">estimate_ar_params_yw</code><span class="sig-paren">(</span><em>gamma</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.timeseries.autoregression.estimate_ar_params_yw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Estimate the parameters of an AR(p) model from the Yule-Walker equations 
+using the given set of autocorrelation coefficients.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>gamma</strong> : array_like</p>
+<blockquote>
+<div><p>Array of length p containing the lag-l, l=1,2,…p, temporal autocorrelation 
+coefficients. The correlation coefficients are assumed to be in ascending 
+order with respect to time lag.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<blockquote class="last">
+<div><p>An array of shape (n,p+1) containing the AR(p) parameters for for the 
+lag-p terms for each cascade level, and also the standard deviation of 
+the innovation term.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pysteps.timeseries.autoregression.iterate_ar_model">
+<code class="descclassname">pysteps.timeseries.autoregression.</code><code class="descname">iterate_ar_model</code><span class="sig-paren">(</span><em>X</em>, <em>phi</em>, <em>EPS=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.timeseries.autoregression.iterate_ar_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply an AR(p) model to a time-series of two-dimensional fields.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : array_like</p>
+<blockquote>
+<div><p>Three-dimensional array of shape (p,w,h) containing a time series of p 
+two-dimensional fields of shape (w,h). The fields are assumed to be in 
+ascending order by time, and the timesteps are assumed to be regular.</p>
+</div></blockquote>
+<p><strong>phi</strong> : array_like</p>
+<blockquote>
+<div><p>Array of length p+1 specifying the parameters of the AR(p) model. The 
+parameters are in ascending order by increasing time lag, and the last 
+element is the parameter corresponding to the innovation term EPS.</p>
+</div></blockquote>
+<p><strong>EPS</strong> : array_like</p>
+<blockquote class="last">
+<div><p>Optional perturbation field for the AR(p) process. If EPS is None, the 
+innovation term is not added.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pysteps.timeseries.correlation">
+<span id="pysteps-timeseries-correlation-module"></span><h2>pysteps.timeseries.correlation module<a class="headerlink" href="#module-pysteps.timeseries.correlation" title="Permalink to this headline">¶</a></h2>
+<p>Methods for computing spatial and temporal correlation of time series of 
+two-dimensional fields.</p>
+<dl class="function">
+<dt id="pysteps.timeseries.correlation.temporal_autocorrelation">
+<code class="descclassname">pysteps.timeseries.correlation.</code><code class="descname">temporal_autocorrelation</code><span class="sig-paren">(</span><em>X</em>, <em>MASK=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.timeseries.correlation.temporal_autocorrelation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute lag-l autocorrelation coefficients gamma_l, l=1,2,…,n-1, for a 
+time series of n two-dimensional input fields.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>X</strong> : array_like</p>
+<blockquote>
+<div><p>Two-dimensional array of shape (n, w, h) containing a time series of n 
+two-dimensional fields of shape (w, h). The input fields are assumed to 
+be in increasing order with respect to time, and the time step is assumed 
+to be regular (i.e. no missing data). X is required to have finite values.</p>
+</div></blockquote>
+<p><strong>MASK</strong> : array_like</p>
+<blockquote>
+<div><p>Optional mask to use for computing the correlation coefficients. Pixels 
+with MASK==False are excluded from the computations.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<blockquote class="last">
+<div><p>Array of length n-1 containing the temporal autocorrelation coefficients 
+for time lags l=1,2,…,n-1.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pysteps.timeseries">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pysteps.timeseries" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="timeseries.html"
+                        title="previous chapter">Time series modeling and analysis (pysteps.timeseries)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="utils.html"
+                        title="next chapter">Miscellaneous utility functions (pysteps.utils)</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="utils.html" title="Miscellaneous utility functions (pysteps.utils)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="timeseries.html" title="Time series modeling and analysis (pysteps.timeseries)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pysteps 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="timeseries.html" >Time series modeling and analysis (pysteps.timeseries)</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Seppo Pulkkinen, Daniele Nerini and Loris Foresti.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

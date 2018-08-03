@@ -1,0 +1,255 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pysteps Reference &#8212; pysteps 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Nowcasting methods (pysteps.nowcasts)" href="nowcasting.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="nowcasting.html" title="Nowcasting methods (pysteps.nowcasts)"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">pysteps 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pysteps-reference">
+<span id="reference"></span><h1>pysteps Reference<a class="headerlink" href="#pysteps-reference" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Release:</th><td class="field-body">0.1</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Date:</th><td class="field-body">Aug 03, 2018</td>
+</tr>
+</tbody>
+</table>
+<span class="target" id="module-pysteps"></span><div class="section" id="pysteps-reference-manual">
+<h2>pysteps reference manual<a class="headerlink" href="#pysteps-reference-manual" title="Permalink to this headline">¶</a></h2>
+<p>This reference manual gives a detailed description of the modules, functions
+and objects included in pysteps.</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="nowcasting.html">Nowcasting methods (<code class="docutils literal"><span class="pre">pysteps.nowcasts</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nowcasting.html#module-pysteps.nowcasts.interface">pysteps.nowcasts.interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nowcasting.html#module-pysteps.nowcasts.simple_advection">pysteps.nowcasts.simple_advection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nowcasting.html#module-pysteps.nowcasts.steps">pysteps.nowcasts.steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="io.html">Input/output routines (<code class="docutils literal"><span class="pre">pysteps.io</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="io.html#module-pysteps.io.interface">pysteps.io.interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#module-pysteps.io.archive">pysteps.io.archive</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#pysteps-io-importers">pysteps.io.importers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#module-pysteps.io.readers">pysteps.io.readers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#pysteps-io-exporters">pysteps.io.exporters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#module-pysteps.io.nowcast_importers">pysteps.io.nowcast_importers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="oflow.html">Optical flow methods (<code class="docutils literal"><span class="pre">pysteps.optflow</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="oflow.html#module-pysteps.optflow.interface">pysteps.optflow.interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oflow.html#module-pysteps.optflow.darts">pysteps.optflow.darts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oflow.html#pysteps-optflow-lucaskanade">pysteps.optflow.lucaskanade</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advection.html">Advection-based extrapolation (<code class="docutils literal"><span class="pre">pysteps.advection</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advection.html#module-pysteps.advection.interface">pysteps.advection.interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advection.html#module-pysteps.advection.semilagrangian">pysteps.advection.semilagrangian</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cascade.html">Scale-based decomposition of precipitation fields (<code class="docutils literal"><span class="pre">pysteps.cascade</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cascade.html#module-pysteps.cascade.interface">pysteps.cascade.interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cascade.html#pysteps-cascade-bandpass-filters">pysteps.cascade.bandpass_filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cascade.html#module-pysteps.cascade.decomposition">pysteps.cascade.decomposition</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="noise.html">Noise generators (<code class="docutils literal"><span class="pre">pysteps.noise</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="noise.html#module-pysteps.noise.interface">pysteps.noise.interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="noise.html#pysteps-noise-fftgenerators">pysteps.noise.fftgenerators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="noise.html#pysteps-noise-motion">pysteps.noise.motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="noise.html#module-pysteps.noise.utils">pysteps.noise.utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="postprocessing.html">Post-processing of forecasts (<code class="docutils literal"><span class="pre">pysteps.postproc</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="postprocessing.html#pysteps-postproc-probmatching">pysteps.postproc.probmatching</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="timeseries.html">Time series modeling and analysis (<code class="docutils literal"><span class="pre">pysteps.timeseries</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#pysteps-timeseries-autoregression">pysteps.timeseries.autoregression</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeseries.html#module-pysteps.timeseries.correlation">pysteps.timeseries.correlation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Miscellaneous utility functions (<code class="docutils literal"><span class="pre">pysteps.utils</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#pysteps-utils-conversion">pysteps.utils.conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#pysteps-utils-dimension">pysteps.utils.dimension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#module-pysteps.utils.interface">pysteps.utils.interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html#pysteps-utils-transformation">pysteps.utils.transformation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="verification.html">Forecast verification (<code class="docutils literal"><span class="pre">pysteps.verification</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="verification.html#pysteps-verification-detcatscores">pysteps.verification.detcatscores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="verification.html#pysteps-verification-detcontscores">pysteps.verification.detcontscores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="verification.html#pysteps-verification-ensscores">pysteps.verification.ensscores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="verification.html#pysteps-verification-plots">pysteps.verification.plots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="verification.html#pysteps-verification-probscores">pysteps.verification.probscores</a></li>
+<li class="toctree-l2"><a class="reference internal" href="verification.html#pysteps-verification-spatialscores">pysteps.verification.spatialscores</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="visualization.html">Visualization (<code class="docutils literal"><span class="pre">pysteps.visualization</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#module-pysteps.visualization.animations">pysteps.visualization.animations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#pysteps-visualization-motionfields">pysteps.visualization.motionfields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#pysteps-visualization-precipfields">pysteps.visualization.precipfields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="visualization.html#module-pysteps.visualization.utils">pysteps.visualization.utils</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="bibliography">
+<h3>Bibliography<a class="headerlink" href="#bibliography" title="Permalink to this headline">¶</a></h3>
+</div>
+<p id="bibtex-bibliography-source/index-0"><table class="docutils citation" frame="void" id="bps2006" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>N.&nbsp;E. Bowler, C.&nbsp;E. Pierce, and A.&nbsp;W. Seed. STEPS: a probabilistic precipitation forecasting scheme which merges an extrapolation nowcast with downscaled NWP. <em>Quarterly Journal of the Royal Meteorological Society</em>, 132(620):2127–2155, 2006. <a class="reference external" href="https://doi.org/10.1256/qj.04.100">doi:10.1256/qj.04.100</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="bs2007" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td>J.&nbsp;Bröcker and L.&nbsp;A. Smith. Increasing the reliability of reliability diagrams. <em>Weather and Forecasting</em>, 22(3):651–661, 2007. <a class="reference external" href="https://doi.org/10.1175/WAF993.1">doi:10.1175/WAF993.1</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="ewwm2013" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[3]</td><td>E.&nbsp;Ebert, L.&nbsp;Wilson, A.&nbsp;Weigel, M.&nbsp;Mittermaier, P.&nbsp;Nurmi, P.&nbsp;Gill, M.&nbsp;Göber, S.&nbsp;Joslyn, B.&nbsp;Brown, T.&nbsp;Fowler, and A.&nbsp;Watkins. Progress and challenges in forecast verification. <em>Meteorological Applications</em>, 20(2):130–139, 2013. <a class="reference external" href="https://doi.org/10.1002/met.1392">doi:10.1002/met.1392</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="gz2002" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[4]</td><td>U.&nbsp;Germann and I.&nbsp;Zawadzki. Scale-dependence of the predictability of precipitation from continental radar images. Part I: description of the methodology. <em>Monthly Weather Review</em>, 130(12):2859–2873, 2002. <a class="reference external" href="https://doi.org/10.1175/1520-0493(2002)130&lt;2859:SDOTPO&gt;2.0.CO;2">doi:10.1175/1520-0493(2002)130&lt;2859:SDOTPO&gt;2.0.CO;2</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="her2000" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[5]</td><td>H.&nbsp;Hersbach. Decomposition of the continuous ranked probability score for ensemble prediction systems. <em>Weather and Forecasting</em>, 15(5):559–570, 2000. <a class="reference external" href="https://doi.org/10.1175/1520-0434(2000)015&lt;0559:DOTCRP&gt;2.0.CO;2">doi:10.1175/1520-0434(2000)015&lt;0559:DOTCRP&gt;2.0.CO;2</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="nbsg2017" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[6]</td><td>D.&nbsp;Nerini, N.&nbsp;Besic, I.&nbsp;Sideris, U.&nbsp;Germann, and L.&nbsp;Foresti. A non-stationary stochastic ensemble generator for radar rainfall fields based on the short-space Fourier transform. <em>Hydrology and Earth System Sciences</em>, 21(6):2777–2797, 2017. <a class="reference external" href="https://doi.org/10.5194/hess-21-2777-2017">doi:10.5194/hess-21-2777-2017</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="pch2018" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[7]</td><td>S.&nbsp;Pulkkinen, V.&nbsp;Chandrasekar, and A.-M. Harri. Nowcasting of precipitation in the high-resolution Dallas-Fort Worth (DFW) urban radar remote sensing network. <em>IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing</em>, 2018. accepted, to appear. <a class="reference external" href="https://doi.org/10.1109/JSTARS.2018.2840491">doi:10.1109/JSTARS.2018.2840491</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="rl2008" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[8]</td><td>N.&nbsp;M. Roberts and H.&nbsp;W. Lean. Scale-selective verification of rainfall accumulations from high-resolution forecasts of convective events. <em>Monthly Weather Review</em>, 136(1):78–97, 2008. <a class="reference external" href="https://doi.org/10.1175/2007MWR2123.1">doi:10.1175/2007MWR2123.1</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="rcw2011" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[9]</td><td>E.&nbsp;Ruzanski, V.&nbsp;Chandrasekar, and Y.&nbsp;Wang. The CASA nowcasting system. <em>Journal of Atmospheric and Oceanic Technology</em>, 28(5):640–655, 2011. <a class="reference external" href="https://doi.org/10.1175/2011JTECHA1496.1">doi:10.1175/2011JTECHA1496.1</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="zr2009" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[10]</td><td>P.&nbsp;Zacharov and D.&nbsp;Rezacova. Using the fractions skill score to assess the relationship between an ensemble QPF spread and skill. <em>Atmospheric Research</em>, 94(4):684–693, 2009. <a class="reference external" href="https://doi.org/10.1016/j.atmosres.2009.03.004">doi:10.1016/j.atmosres.2009.03.004</a>.</td></tr>
+</tbody>
+</table>
+</p>
+</div>
+<div class="section" id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="../genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="../py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="../search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Next topic</h4>
+  <p class="topless"><a href="nowcasting.html"
+                        title="next chapter">Nowcasting methods (<code class="docutils literal"><span class="pre">pysteps.nowcasts</span></code>)</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="nowcasting.html" title="Nowcasting methods (pysteps.nowcasts)"
+             >next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">pysteps 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Seppo Pulkkinen, Daniele Nerini and Loris Foresti.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,601 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>pysteps.optflow package &#8212; pysteps 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="pysteps.advection package" href="pysteps.advection.html" />
+    <link rel="prev" title="Optical flow and advection schemes (pysteps.optflow and pysteps.advection)" href="oflow_advection.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pysteps.advection.html" title="pysteps.advection package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="oflow_advection.html" title="Optical flow and advection schemes (pysteps.optflow and pysteps.advection)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pysteps 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="oflow_advection.html" accesskey="U">Optical flow and advection schemes (pysteps.optflow and pysteps.advection)</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pysteps-optflow-package">
+<h1>pysteps.optflow package<a class="headerlink" href="#pysteps-optflow-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pysteps.optflow.darts">
+<span id="pysteps-optflow-darts-module"></span><h2>pysteps.optflow.darts module<a class="headerlink" href="#module-pysteps.optflow.darts" title="Permalink to this headline">¶</a></h2>
+<p>Implementation of the DARTS algorithm.</p>
+<dl class="function">
+<dt id="pysteps.optflow.darts.DARTS">
+<code class="descclassname">pysteps.optflow.darts.</code><code class="descname">DARTS</code><span class="sig-paren">(</span><em>Z</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.optflow.darts.DARTS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the advection field from a sequence of input images by using the 
+DARTS method.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>Z</strong> : array-like</p>
+<blockquote>
+<div><p>Array of shape (T,L,L) containing a sequence of T two-dimensional input 
+images of shape (L,L).</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray</p>
+<blockquote>
+<div><p>Three-dimensional array (2,L,L) containing the dense x- and y-components 
+of the motion field.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><strong>N_x</strong> : int</p>
+<blockquote>
+<div><p>Number of DFT coefficients to use for the input images, x-axis.</p>
+</div></blockquote>
+<p><strong>N_y</strong> : int</p>
+<blockquote>
+<div><p>Number of DFT coefficients to use for the input images, y-axis.</p>
+</div></blockquote>
+<p><strong>N_t</strong> : int</p>
+<blockquote>
+<div><p>Number of DFT coefficients to use for the input images, time axis.</p>
+</div></blockquote>
+<p><strong>M_x</strong> : int</p>
+<blockquote>
+<div><p>Number of DFT coefficients to compute for the output advection field, 
+x-axis.</p>
+</div></blockquote>
+<p><strong>M_y</strong> : int</p>
+<blockquote>
+<div><p>Number of DFT coefficients to compute for the output advection field, 
+y-axis.</p>
+</div></blockquote>
+<p><strong>print_info</strong> : bool</p>
+<blockquote>
+<div><p>If True, print information messages.</p>
+</div></blockquote>
+<p><strong>lsq_method</strong> : int</p>
+<blockquote>
+<div><p>The method to use for solving the linear equations in the least squares 
+sense: 1=numpy.linalg.lstsq, 2=explicit computation of the Moore-Penrose 
+pseudoinverse and SVD.</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote class="last">
+<div><p>if set to True, it prints information about the program</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">References</p>
+<p>E. Ruzanski, V. Chandrasekar and Y. Wang, 2011: The CASA Nowcasting System, 
+Journal of Atmospheric and Oceanic Technology, 28(5), 640-655</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pysteps.optflow.interface">
+<span id="pysteps-optflow-interface-module"></span><h2>pysteps.optflow.interface module<a class="headerlink" href="#module-pysteps.optflow.interface" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="pysteps.optflow.interface.get_method">
+<code class="descclassname">pysteps.optflow.interface.</code><code class="descname">get_method</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.optflow.interface.get_method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a callable function for the optical flow method corresponding to
+the given name. The available options are:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2">Python-based implementations</th>
+</tr>
+<tr class="row-even"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td>None</td>
+<td>Returns a zero motion field</td>
+</tr>
+<tr class="row-even"><td>lucaskanade</td>
+<td>OpenCV implementation of the Lucas-Kanade method
+with interpolated motion vectors for areas with no
+precipitation.</td>
+</tr>
+<tr class="row-odd"><td>darts</td>
+<td>Implementation of the DARTS method of Ruzanski et al.</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head" colspan="2">Methods implemented in C (these require separate compilation and linkage)</th>
+</tr>
+<tr class="row-even"><th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-odd"><td>brox</td>
+<td>implementation of the variational method of Brox et al.
+(2004) from IPOL (<a class="reference external" href="http://www.ipol.im/pub/art/2013/21">http://www.ipol.im/pub/art/2013/21</a>)</td>
+</tr>
+<tr class="row-even"><td>clg</td>
+<td>implementation of the Combined Local-Global (CLG)
+method of Bruhn et al., 2005 from IPOL
+(<a class="reference external" href="http://www.ipol.im/pub/art/2015/44">http://www.ipol.im/pub/art/2015/44</a>)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pysteps.optflow.lucaskanade">
+<span id="pysteps-optflow-lucaskanade-module"></span><h2>pysteps.optflow.lucaskanade module<a class="headerlink" href="#module-pysteps.optflow.lucaskanade" title="Permalink to this headline">¶</a></h2>
+<p>OpenCV implementation of the Lucas-Kanade method with interpolated motion
+vectors for areas with no precipitation</p>
+<dl class="function">
+<dt id="pysteps.optflow.lucaskanade.LucasKanade_features_tracking">
+<code class="descclassname">pysteps.optflow.lucaskanade.</code><code class="descname">LucasKanade_features_tracking</code><span class="sig-paren">(</span><em>prvs</em>, <em>next</em>, <em>p0</em>, <em>winsize_LK</em>, <em>nr_levels_LK</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.optflow.lucaskanade.LucasKanade_features_tracking" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call the Lucas-Kanade features tracking algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>prvs</strong> : array-like</p>
+<blockquote>
+<div><p>Array of shape (m,n) containing the first 8-bit input image.</p>
+</div></blockquote>
+<p><strong>next</strong> : array-like</p>
+<blockquote>
+<div><p>Array of shape (m,n) containing the successive 8-bit input image.</p>
+</div></blockquote>
+<p><strong>p0</strong> : list</p>
+<blockquote>
+<div><p>Vector of 2D points for which the flow needs to be found.
+Point coordinates must be single-precision floating-point numbers.</p>
+</div></blockquote>
+<p><strong>winsize_LK</strong> : tuple</p>
+<blockquote>
+<div><p>Size of the search window at each pyramid level. 
+Small windows (e.g. 10) lead to unrealistic motion.</p>
+</div></blockquote>
+<p><strong>nr_levels_LK</strong> : int</p>
+<blockquote>
+<div><p>0-based maximal pyramid level number.
+Not very sensitive parameter.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>x0</strong> : array-like</p>
+<blockquote>
+<div><p>Output vector of x-coordinates of detected point motions.</p>
+</div></blockquote>
+<p><strong>y0</strong> : array-like</p>
+<blockquote>
+<div><p>Output vector of y-coordinates of detected point motions.</p>
+</div></blockquote>
+<p><strong>u</strong> : array-like</p>
+<blockquote>
+<div><p>Output vector of u-components of detected point motions.</p>
+</div></blockquote>
+<p><strong>v</strong> : array-like</p>
+<blockquote class="last">
+<div><p>Output vector of v-components of detected point motions.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pysteps.optflow.lucaskanade.ShiTomasi_features_to_track">
+<code class="descclassname">pysteps.optflow.lucaskanade.</code><code class="descname">ShiTomasi_features_to_track</code><span class="sig-paren">(</span><em>R</em>, <em>max_corners_ST</em>, <em>quality_level_ST</em>, <em>min_distance_ST</em>, <em>block_size_ST</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.optflow.lucaskanade.ShiTomasi_features_to_track" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call the Shi-Tomasi corner detection algorithm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>R</strong> : array-like</p>
+<blockquote>
+<div><p>Array of shape (m,n) containing the input precipitation field passed as 8-bit image.</p>
+</div></blockquote>
+<p><strong>max_corners_ST</strong> : int</p>
+<blockquote>
+<div><p>Maximum number of corners to return. If there are more corners than are 
+found, the strongest of them is returned.</p>
+</div></blockquote>
+<p><strong>quality_level_ST</strong> : float</p>
+<blockquote>
+<div><p>Parameter characterizing the minimal accepted quality of image corners.
+See original documentation for more details (<a class="reference external" href="https://docs.opencv.org">https://docs.opencv.org</a>).</p>
+</div></blockquote>
+<p><strong>min_distance_ST</strong> : int</p>
+<blockquote>
+<div><p>Minimum possible Euclidean distance between the returned corners [px].</p>
+</div></blockquote>
+<p><strong>block_size_ST</strong> : int</p>
+<blockquote>
+<div><p>Size of an average block for computing a derivative covariation matrix 
+over each pixel neighborhood.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>p0</strong> : list</p>
+<blockquote class="last">
+<div><p>Output vector of detected corners.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pysteps.optflow.lucaskanade.clean_image">
+<code class="descclassname">pysteps.optflow.lucaskanade.</code><code class="descname">clean_image</code><span class="sig-paren">(</span><em>R</em>, <em>n=3</em>, <em>thr=0</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.optflow.lucaskanade.clean_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a binary morphological opening to filter small isolated echoes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>R</strong> : array-like</p>
+<blockquote>
+<div><p>Array of shape (m,n) containing the input precipitation field.</p>
+</div></blockquote>
+<p><strong>n</strong> : int</p>
+<blockquote>
+<div><p>The structuring element size [px].</p>
+</div></blockquote>
+<p><strong>thr</strong> : float</p>
+<blockquote>
+<div><p>The rain/no-rain threshold to convert the image into a binary image.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>R</strong> : array</p>
+<blockquote class="last">
+<div><p>Array of shape (m,n) containing the cleaned precipitation field.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pysteps.optflow.lucaskanade.declustering">
+<code class="descclassname">pysteps.optflow.lucaskanade.</code><code class="descname">declustering</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>u</em>, <em>v</em>, <em>decl_grid</em>, <em>min_nr_samples</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.optflow.lucaskanade.declustering" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter out outliers and get more representative data points.
+It assigns data points to a (RxR) declustering grid and then take the median of all values within one cell.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>x0 :</strong></p>
+<p><strong>y0 :</strong></p>
+<p><strong>u :</strong></p>
+<p><strong>v :</strong></p>
+<p><strong>decl_grid</strong> : int</p>
+<blockquote>
+<div><p>Size of the declustering grid [px].</p>
+</div></blockquote>
+<p><strong>min_nr_samples</strong> : int</p>
+<blockquote>
+<div><p>The minimum number of samples for computing the median within given declustering cell.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>x</strong> : array-like</p>
+<p><strong>y</strong> : array-like</p>
+<p><strong>u</strong> : array-like</p>
+<p class="last"><strong>v</strong> : array-like</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pysteps.optflow.lucaskanade.dense_lucaskanade">
+<code class="descclassname">pysteps.optflow.lucaskanade.</code><code class="descname">dense_lucaskanade</code><span class="sig-paren">(</span><em>R</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.optflow.lucaskanade.dense_lucaskanade" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>OpenCV implementation of the Lucas-Kanade method with interpolated motion</dt>
+<dd>vectors for areas with no precipitation.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>R</strong> : array-like, shape (t,m,n)</p>
+<blockquote>
+<div><p>array containing the input precipitation fields, no missing values are 
+accepted</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : ndarray, shape (2,m,n)</p>
+<blockquote>
+<div><p>three-dimensional array containing the dense x- and y-components of the 
+motion field.</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name" colspan="2">Other Parameters:</th></tr>
+<tr class="field-odd field"><td>&#160;</td><td class="field-body"><p class="first"><strong>max_corners_ST</strong> : int</p>
+<blockquote>
+<div><p>maximum number of corners to return. If there are more corners than are 
+found, the strongest of them is returned</p>
+</div></blockquote>
+<p><strong>quality_level_ST</strong> : float</p>
+<blockquote>
+<div><p>parameter characterizing the minimal accepted quality of image corners.
+See original documentation for more details (<a class="reference external" href="https://docs.opencv.org">https://docs.opencv.org</a>)</p>
+</div></blockquote>
+<p><strong>min_distance_ST</strong> : int</p>
+<blockquote>
+<div><p>minimum possible Euclidean distance between the returned corners [px]</p>
+</div></blockquote>
+<p><strong>block_size_ST</strong> : int</p>
+<blockquote>
+<div><p>size of an average block for computing a derivative covariation matrix 
+over each pixel neighborhood</p>
+</div></blockquote>
+<p><strong>winsize_LK</strong> : int</p>
+<blockquote>
+<div><p>size of the search window at each pyramid level. 
+Small windows (e.g. 10) lead to unrealistic motion</p>
+</div></blockquote>
+<p><strong>nr_levels_LK</strong> : int</p>
+<blockquote>
+<div><p>0-based maximal pyramid level number.
+Not very sensitive parameter</p>
+</div></blockquote>
+<p><strong>max_speed</strong> : float</p>
+<blockquote>
+<div><p>the maximum allowed speed [px/timestep]</p>
+</div></blockquote>
+<p><strong>nr_IQR_outlier</strong> : int</p>
+<blockquote>
+<div><p>nr of IQR above median to consider the velocity vector as outlier and discard it</p>
+</div></blockquote>
+<p><strong>size_opening</strong> : int</p>
+<blockquote>
+<div><p>the structuring element size for the filtering of isolated pixels [px]</p>
+</div></blockquote>
+<p><strong>decl_grid</strong> : int</p>
+<blockquote>
+<div><p>size of the declustering grid [px]</p>
+</div></blockquote>
+<p><strong>min_nr_samples</strong> : int</p>
+<blockquote>
+<div><p>the minimum number of samples for computing the median within given declustering cell</p>
+</div></blockquote>
+<p><strong>function</strong> : string</p>
+<blockquote>
+<div><p>the radial basis function, based on the Euclidian norm d, used in the 
+interpolation of the sparse vectors.
+default : inverse
+available : nearest, inverse, gaussian</p>
+</div></blockquote>
+<p><strong>k</strong> : int or “all”</p>
+<blockquote>
+<div><p>the number of nearest neighbors used to speed-up the interpolation
+If set equal to “all”, it employs all the sparse vectors
+default : 20</p>
+</div></blockquote>
+<p><strong>epsilon</strong> : float</p>
+<blockquote>
+<div><p>adjustable constant for gaussian or inverse functions
+default : median distance between sparse vectors</p>
+</div></blockquote>
+<p><strong>nchunks</strong> : int</p>
+<blockquote>
+<div><p>split the grid points in n chunks to limit the memory usage during the 
+interpolation
+default : 5</p>
+</div></blockquote>
+<p><strong>extra_vectors</strong> : array-like</p>
+<blockquote>
+<div><p>additional sparse motion vectors as 2d array (columns: x,y,u,v; rows: 
+nbr. of vectors) to be integrated with the sparse vectors from the Lucas-Kanade 
+local tracking.
+x and y must be in pixel coordinates, with (0,0) being the upper-left 
+corner of the field R. u and v must be in pixel units</p>
+</div></blockquote>
+<p><strong>verbose</strong> : bool</p>
+<blockquote class="last">
+<div><p>if set to True, it prints information about the program</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pysteps.optflow.lucaskanade.interpolate_sparse_vectors">
+<code class="descclassname">pysteps.optflow.lucaskanade.</code><code class="descname">interpolate_sparse_vectors</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>u</em>, <em>v</em>, <em>domain_size</em>, <em>function='inverse'</em>, <em>k=20</em>, <em>epsilon=None</em>, <em>nchunks=5</em><span class="sig-paren">)</span><a class="headerlink" href="#pysteps.optflow.lucaskanade.interpolate_sparse_vectors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Interpolation of sparse motion vectors to produce a dense field of motion 
+vectors.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>x</strong> : array-like</p>
+<blockquote>
+<div><p>x coordinates of the sparse motion vectors</p>
+</div></blockquote>
+<p><strong>y</strong> : array-like</p>
+<blockquote>
+<div><p>y coordinates of the sparse motion vectors</p>
+</div></blockquote>
+<p><strong>u</strong> : array_like</p>
+<blockquote>
+<div><p>u components of the sparse motion vectors</p>
+</div></blockquote>
+<p><strong>v</strong> : array_like</p>
+<blockquote>
+<div><p>v components of the sparse motion vectors</p>
+</div></blockquote>
+<p><strong>domain_size</strong> : tuple</p>
+<blockquote>
+<div><p>size of the domain of the dense motion field [px]</p>
+</div></blockquote>
+<p><strong>function</strong> : string</p>
+<blockquote>
+<div><p>the radial basis function, based on the Euclidian norm, d.
+default : inverse
+available : nearest, inverse, gaussian</p>
+</div></blockquote>
+<p><strong>k</strong> : int or “all”</p>
+<blockquote>
+<div><p>the number of nearest neighbors used to speed-up the interpolation
+If set equal to “all”, it employs all the sparse vectors
+default : 20</p>
+</div></blockquote>
+<p><strong>epsilon</strong> : float</p>
+<blockquote>
+<div><p>adjustable constant for gaussian or inverse functions
+default : median distance between sparse vectors</p>
+</div></blockquote>
+<p><strong>nchunks</strong> : int</p>
+<blockquote>
+<div><p>split the grid points in n chunks to limit the memory usage during the 
+interpolation
+default : 5</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>X</strong> : array-like</p>
+<blockquote>
+<div><p>grid</p>
+</div></blockquote>
+<p><strong>Y</strong> : array-like</p>
+<blockquote>
+<div><p>grid</p>
+</div></blockquote>
+<p><strong>UV</strong> : array-like</p>
+<blockquote class="last">
+<div><p>Three-dimensional array (2,domain_size[0],domain_size[1]) 
+containing the dense U, V motion fields.</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pysteps.optflow">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pysteps.optflow" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="oflow_advection.html"
+                        title="previous chapter">Optical flow and advection schemes (pysteps.optflow and pysteps.advection)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pysteps.advection.html"
+                        title="next chapter">pysteps.advection package</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="pysteps.advection.html" title="pysteps.advection package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="oflow_advection.html" title="Optical flow and advection schemes (pysteps.optflow and pysteps.advection)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pysteps 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="oflow_advection.html" >Optical flow and advection schemes (pysteps.optflow and pysteps.advection)</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Seppo Pulkkinen, Daniele Nerini and Loris Foresti.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

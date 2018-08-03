@@ -76,3 +76,7 @@ python setup.py install --prefix=/path/to/local/dir
 ```
 
 IMPORTANT: All the dependencies need to be already installed! 
+
+## Documentation
+
+The documentation is available at this [link](https://pysteps.github.io/refmanual).

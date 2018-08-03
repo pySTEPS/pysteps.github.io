@@ -1,9 +1,0 @@
-.. _pysteps.oflow_advection:
-
-Optical flow and advection schemes (:mod:`pysteps.optflow` and :mod:`pysteps.advection`)
-****************************************************************************************
-
-.. toctree::
-    
-    pysteps.optflow
-    pysteps.advection

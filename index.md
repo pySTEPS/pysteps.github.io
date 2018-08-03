@@ -79,4 +79,6 @@ IMPORTANT: All the dependencies need to be already installed!
 
 ## Documentation
 
-The documentation is available at this [link](https://pysteps.github.io/refmanual).
+The documentation is available at this [link](https://pysteps.github.io/pysteps/refmanual/).
+
+The same is also available as pdf [here](https://github.com/pySTEPS/pysteps/tree/gh-pages/refmanual/refmanual.pdf).

@@ -5,19 +5,32 @@ The pySTEPS initiative  is a community that develops and maintains an easy to us
 
 The focus is on **probabilistic nowcasting of radar precipitation fields**, but pySTEPS is designed to allow a wider range of uses.
 
-## Announcements
-
-### Release of pysteps
-
-A first release of *pysteps* is planned for **10 August 2018**. 
-
-The code is being reorganized in [one single repository](https://github.com/pySTEPS/pysteps). At the moment the old version of *pysteps* is still available on GitHub and corresponds to the code that was used during the ERAD2018 workshop. Very soon the old repositories will be deleted and only the new version maintained.
-
-### ERAD2018 short-course
+## ERAD2018 short-course
 
 Our first workshop using *pysteps* took place during ERAD2018 in Ede-Wageningen, NL, on 1 July 2018. With over 30 participants, this was a very successful workshop! We would like to thank all the participants for their enthusiasm and commitment! 
 
 The short-course description and material are available on the [ERAD2018 website](https://www.erad2018.nl/short-courses/) (search for short-course 4: *Radar-based Ensemble Precipitation Nowcasting*).
+
+## Download pysteps 0.1
+
+The first release of pysteps is available [here](https://github.com/pySTEPS/pysteps/releases).
+
+Features included in pysteps 0.1:
+
+* Support for reading various composite radar image formats (netCDF, OPERA HDF, GIF, PGM).
+* Writing of the nowcast to netCDF following CF 1.7 conventions.
+* Optical flow methods to compute the radar echo motion fields (local and spectral approaches are available).
+* A semi-Lagrangian advection scheme to extrapolate the radar fields.
+* Spatial random field generators to create realistic correlated perturbation fields.
+* Autoregressive models to impose temporal auto-correlations.
+* Methods to generate deterministic and ensemble precipitation nowcasts.
+* Support for parallelization using Dask.
+* Scale-decomposition of precipitation fields based on the STEPS framework.
+* Verification of deterministic and spatial forecasts: RMSE, MAE, correlation, CSI, ETS, HSS, Fractions Skill Score, etc.
+* Verification of ensemble and probabilistic forecasts: reliability diagram, rank histograms, ROC curves, CRPS, ensemble spread-skill.
+* Utilities to convert, transform and aggregate precipitation fields.
+* Visualization methods to plot and animate radar rainfall fields, motion fields and ensemble nowcasts. Support for Basemap.
+* Example scripts to quickly introduce the users to the working of various modules. 
 
 ## Quick-start guide
 It is very easy to start using *pysteps*! You simply need to install the dependencies with **Anaconda**, download (clone) the main *pysteps* repository and install it.

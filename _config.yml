@@ -4,7 +4,8 @@ description:      the nowcasting initiative
 show_downloads: true
 github:
   repository_url: https://github.com/pySTEPS/pysteps
-  
+  zip_url: https://github.com/pySTEPS/pysteps/archive/v0.1-beta.zip
+  ta_url: https://github.com/pySTEPS/pysteps/archive/v0.1-beta.tar.gz  
 # Google Analytics ID
 google_analytics: "UA-122857614-1" 
 

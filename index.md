@@ -34,16 +34,20 @@ Features included in pysteps 0.1:
 
 ## Gallery
 
-![](https://github.com/pySTEPS/pysteps.github.io/blob/master/figs/fmi_precipfield_with_basemap.png?raw=true)
+![](figs/fmi_precipfield_with_basemap.png)
+
 *This FMI radar composite was imported and visualized with pysteps.*
 
-![](https://github.com/pySTEPS/pysteps.github.io/blob/master/figs/fmi_reldiag_060_005_thr0.1.png?raw=true)
+![](figs/fmi_reldiag_060_005_thr0.1.png)
+
 *The reliability diagram for 0.1 mm/h threshold and a +60 minute ensemble nowcast with 20 members computed for the above FMI example.*
 
-![](https://github.com/pySTEPS/pysteps.github.io/blob/master/figs/mch_precipfield_with_quiver.png?raw=true)
+![](figs/mch_precipfield_with_quiver.png)
+
 *The motion field estimated on a sequence of MeteoSwiss radar composites using DARTS.*
 
-![](https://github.com/pySTEPS/pysteps.github.io/blob/master/figs/mch_rankhist_060_005.png?raw=true)
+![](figs/mch_rankhist_060_005.png)
+
 *The rank histogram of a 20-member nowcast at +60 minutes for the above MeteoSwiss event.*
 
 ## Quick-start guide

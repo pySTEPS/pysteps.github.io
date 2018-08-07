@@ -32,15 +32,28 @@ Features included in pysteps 0.1:
 * Visualization methods to plot and animate radar rainfall fields, motion fields and ensemble nowcasts. Support for Basemap.
 * Example scripts to quickly introduce the users to the working of various modules. 
 
+## Gallery
+
+![](https://github.com/pySTEPS/pysteps.github.io/blob/master/figs/fmi_precipfield_with_basemap.png?raw=true)
+*This FMI radar composite was imported and visualized with pysteps.*
+
+![](https://github.com/pySTEPS/pysteps.github.io/blob/master/figs/fmi_reldiag_060_005_thr0.1.png?raw=true)
+*The reliability diagram for 0.1 mm/h threshold and a +60 minute ensemble nowcast with 20 members computed for the above FMI example.*
+
+![](https://github.com/pySTEPS/pysteps.github.io/blob/master/figs/mch_precipfield_with_quiver.png?raw=true)
+*The motion field estimated on a sequence of MeteoSwiss radar composites using DARTS.*
+
+![](https://github.com/pySTEPS/pysteps.github.io/blob/master/figs/mch_rankhist_060_005.png?raw=true)
+*The rank histogram of a 20-member nowcast at +60 minutes for the above MeteoSwiss event.*
+
 ## Quick-start guide
-It is very easy to start using *pysteps*! You simply need to install the dependencies with **Anaconda**, download (clone) the main *pysteps* repository and install it.
+It is very easy to start using *pysteps*! You simply need to install the dependencies, download the latest *pysteps* version and install it.
 
 Important: *pysteps* is actively developed using **Python 3.6**.
 
 Here we will explain how to set up pySTEPS in a **linux environment**. 
-We plan to include detailed instructions for Windows and MacOS users, too. 
 
-It is strongly advised to install the last version of **Anaconda 3** (hence the Python 3.6 version on the download page) for optimal management of the libraries needed in *pysteps*. 
+It is strongly advised to install the last version of **Anaconda 3** for optimal management of the libraries needed in *pysteps*. 
 
 Download the appropriate Anaconda for your platform: [https://www.anaconda.com/download/](https://www.anaconda.com/download/) 
 
@@ -62,10 +75,7 @@ Activate the virtual environment:
 source activate pysteps
 ```   
 
-To install *pysteps* from its source, download the github repository containing the *pysteps* source code use the following command:
-```
-git clone https://github.com/pySTEPS/pysteps
-```
+To install *pysteps* from its source, download the latest version of the *pysteps* source code from [here](https://github.com/pySTEPS/pysteps/releases) and unzip/unpack the code.
 
 To install using pip run:
 ```

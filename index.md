@@ -5,6 +5,33 @@ The pySTEPS initiative  is a community that develops and maintains an easy to us
 
 The focus is on **probabilistic nowcasting of radar precipitation fields**, but pySTEPS is designed to allow a wider range of uses.
 
+## Download pysteps 0.2
+
+The most recent release of pysteps is available [here](https://github.com/pySTEPS/pysteps/releases).
+
+Change log for pysteps 0.2:
+
+-    Bug fixes.
+-    Performance and syntax improvements.
+-    Improve documentation to several modules and methods.
+-    Add the Variational Echo Tracking (VET) method from MAPLE to the motion module.
+-    Replace the config module with a JSON pystepsrc configuration file.
+-    More efficient computation of the FFT in the cascade decomposition and noise generation by using the real FFT instead of the complex FFT, i.e. rfft2/irfft2 instead of fft2/ifft2.
+-    More sensible naming of several main modules: optflow -> motion, advection -> extrapolation and postproc -> postprocessing.
+-    New utility methods to clip the domain by geographical coordinates.
+-    New data transformation methods: normal quantile, square-root and logarithmic transformations.
+-    New importer for MeteoSwiss' metranet data format.
+-    New "shift and scale" post-processing method.
+-    Implement the S-PROG method with probability matching.
+-    New intensity-scale verification method.
+-    New visualization methods: cartopy backend, exceedance probabilities and plotting motion fields on a map.
+-    Support for Swiss projection when using cartopy.
+-    New interface module for different FFT methods and allow the user to choose the method.
+-    Fix incorrect separation into components when using the bps method for adding perturbations to the advection field.
+-    Two different methods for adjusting the temporal autocorrelation coefficients in order to guarantee stationarity of the resulting AR(2) models.
+-    Modify the STEPS method to have the same number of positional arguments as the other methods in the nowcasts module and reorganize the keyword arguments.
+-    Move the deterministic S-PROG mask computation outside the stochastic part of the STEPS method to avoid repeated computations.
+
 ## pysteps@UrbanRain2018
 
 We are hosting a pysteps demo during the next [UrbanRain](http://www.urbanrain.ethz.ch/) conference in Pontresina (5-7 December 2018).
@@ -19,27 +46,6 @@ This short session will present how to install, configure and run the code. The 
 Our first workshop using *pysteps* took place during ERAD2018 in Ede-Wageningen, NL, on 1 July 2018. With over 30 participants, this was a very successful workshop! We would like to thank all the participants for their enthusiasm and commitment! 
 
 The short-course description and material are available on the [ERAD2018 website](https://www.erad2018.nl/short-courses/) (search for short-course 4: *Radar-based Ensemble Precipitation Nowcasting*).
-
-## Download pysteps 0.1
-
-The first release of pysteps is available [here](https://github.com/pySTEPS/pysteps/releases).
-
-Features included in pysteps 0.1:
-
-* Support for reading various composite radar image formats (netCDF, OPERA HDF, GIF, PGM).
-* Writing of the nowcast to netCDF following CF 1.7 conventions.
-* Optical flow methods to compute the radar echo motion fields (local and spectral approaches are available).
-* A semi-Lagrangian advection scheme to extrapolate the radar fields.
-* Spatial random field generators to create realistic correlated perturbation fields.
-* Autoregressive models to impose temporal auto-correlations.
-* Methods to generate deterministic and ensemble precipitation nowcasts.
-* Support for parallelization using Dask.
-* Scale-decomposition of precipitation fields based on the STEPS framework.
-* Verification of deterministic and spatial forecasts: RMSE, MAE, correlation, CSI, ETS, HSS, Fractions Skill Score, etc.
-* Verification of ensemble and probabilistic forecasts: reliability diagram, rank histograms, ROC curves, CRPS, ensemble spread-skill.
-* Utilities to convert, transform and aggregate precipitation fields.
-* Visualization methods to plot and animate radar rainfall fields, motion fields and ensemble nowcasts. Support for Basemap.
-* Example scripts to quickly introduce the users to the working of various modules. 
 
 ## Quick-start guide
 It is very easy to start using *pysteps*! You simply need to install the dependencies, download the latest *pysteps* version and install it.

@@ -5,6 +5,14 @@ The pySTEPS initiative  is a community that develops and maintains an easy to us
 
 The focus is on **probabilistic nowcasting of radar precipitation fields**, but pySTEPS is designed to allow a wider range of uses.
 
+## (25.03.2109) New documentation page on Read the Docs
+
+In preparation of the V1.0 release, we have moved all our documentation to Read the Docs at the following link:
+
+https://pysteps.readthedocs.io
+
+Note that the [old documentation](https://pysteps.github.io/pysteps/refmanual/) for V0.2 is currently still available.
+
 ## Download pysteps 0.2
 
 The most recent release of pysteps is available [here](https://github.com/pySTEPS/pysteps/releases).
@@ -54,9 +62,7 @@ Please refer to the [README document](https://github.com/pySTEPS/pysteps/blob/ma
 
 ## Documentation
 
-The documentation is available at this [link](https://pysteps.github.io/pysteps/refmanual/).
-
-The same is also available as pdf [here](https://github.com/pySTEPS/pysteps/raw/gh-pages/refmanual.pdf).
+The documentation is available at this [link](https://pysteps.readthedocs.io).
 
 ## Gallery
 

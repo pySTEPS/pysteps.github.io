@@ -9,7 +9,7 @@ The focus is on **probabilistic nowcasting of radar precipitation fields**, but 
 
 In preparation of the V1.0 release, we have moved all our documentation to Read the Docs at the following link:
 
-(https://pysteps.readthedocs.io)
+[https://pysteps.readthedocs.io](https://pysteps.readthedocs.io)
 
 Note that the [old documentation](https://pysteps.github.io/pysteps/refmanual/) for V0.2 is currently still available.
 

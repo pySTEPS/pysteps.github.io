@@ -66,7 +66,7 @@ The documentation is available at this [link](https://pysteps.readthedocs.io).
 
 ## Gallery
 
-![](figs/fmi_precipfield_with_basemap.png)
+![](https://github.com/pySTEPS/pysteps-publication/blob/master/animations/201609281600_stoch_8levels.gif)
 
 *This FMI radar composite was imported and visualized with pysteps.*
 

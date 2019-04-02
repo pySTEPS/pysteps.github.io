@@ -53,7 +53,7 @@ Please refer to the [README document](https://github.com/pySTEPS/pysteps/blob/ma
 
 ## Gallery
 
-![](https://github.com/pySTEPS/pysteps-publication/blob/master/animations/201609281600_stoch_8levels.gif)
+![](figs/201609281600_stoch_8levels.gif)
 
 *This FMI radar composite was imported and visualized with pysteps.*
 

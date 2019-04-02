@@ -54,17 +54,13 @@ Please refer to the [README document](https://github.com/pySTEPS/pysteps/blob/ma
 ## Gallery
 
 ![](figs/201609281600_stoch_8levels.gif)
+*One stochastic ensemble member produced by pysteps starting from the radar composite image from the Finnish Meteorological Institute (FMI).*
 
-*This FMI radar composite was imported and visualized with pysteps.*
+![](figs/201609281600_prob1.0_8levels.gif)
+*Probability to exceed 1.0 mm/h derived from a 20-member ensemble nowcast for the above FMI example.
 
 ![](figs/fmi_reldiag_060_005_thr0.1.png)
-
 *The reliability diagram for 0.1 mm/h threshold and a +60 minute ensemble nowcast with 20 members computed for the above FMI example.*
 
-![](figs/mch_precipfield_with_quiver.png)
-
-*The motion field estimated on a sequence of MeteoSwiss radar composites using DARTS.*
-
 ![](figs/mch_rankhist_060_005.png)
-
 *The rank histogram of a 20-member nowcast at +60 minutes for the above MeteoSwiss event.*

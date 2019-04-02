@@ -5,7 +5,7 @@ The pySTEPS initiative  is a community that develops and maintains an easy to us
 
 The focus is on **probabilistic nowcasting of radar precipitation fields**, but pySTEPS is designed to allow a wider range of uses.
 
-## (25.03.2109) New documentation page on Read the Docs
+## New documentation page on Read the Docs
 
 In preparation of the V1.0 release, we have moved all our documentation to Read the Docs at the following link:
 
@@ -40,29 +40,16 @@ Change log for pysteps 0.2:
 -    Modify the STEPS method to have the same number of positional arguments as the other methods in the nowcasts module and reorganize the keyword arguments.
 -    Move the deterministic S-PROG mask computation outside the stochastic part of the STEPS method to avoid repeated computations.
 
-## pysteps@UrbanRain2018
-
-We are hosting a pysteps demo during the next [UrbanRain](http://www.urbanrain.ethz.ch/) conference in Pontresina (5-7 December 2018).
-
-December 7, 14:00-15:00:
-Topical Workshop 2: **Discover pysteps - the ensemble precipitation nowcasting library (demo session)**
-
-This short session will present how to install, configure and run the code. The goal is to provide an overview of some of the features in pysteps and demonstrate its potential for hydrological applications. This will be a demo session, participants are not required to bring their laptops. 
-
 ## ERAD2018 short-course
 
 Our first workshop using *pysteps* took place during ERAD2018 in Ede-Wageningen, NL, on 1 July 2018. With over 30 participants, this was a very successful workshop! We would like to thank all the participants for their enthusiasm and commitment! 
 
-The short-course description and material are available on the [ERAD2018 website](https://www.erad2018.nl/short-courses/) (search for short-course 4: *Radar-based Ensemble Precipitation Nowcasting*).
+The short-course description and training material are available on the [ERAD2018 website](https://www.erad2018.nl/short-courses/) (search for short-course 4: *Radar-based Ensemble Precipitation Nowcasting*).
 
 ## Quick-start guide
 It is very easy to start using *pysteps*! You simply need to install the dependencies, download the latest *pysteps* version and install it.
 
 Please refer to the [README document](https://github.com/pySTEPS/pysteps/blob/master/README.rst) in our main github repository for the installation instructions.
-
-## Documentation
-
-The documentation is available at this [link](https://pysteps.readthedocs.io).
 
 ## Gallery
 

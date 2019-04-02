@@ -55,11 +55,11 @@ Please refer to the [README document](https://github.com/pySTEPS/pysteps/blob/ma
 
 ![](figs/201609281600_stoch_8levels.gif)
 
-*One stochastic ensemble member produced by pysteps starting from the radar composite image from the Finnish Meteorological Institute (FMI).
+*One stochastic ensemble member produced by pysteps starting from the radar composite image from the Finnish Meteorological Institute (FMI).*
 
 ![](figs/201609281600_prob1.0_8levels.gif)
 
-*Probability to exceed 1.0 mm/h derived from a 20-member ensemble nowcast for the above FMI example.
+*Probability to exceed 1.0 mm/h derived from a 20-member ensemble nowcast for the above FMI example.*
 
 ![](figs/fmi_reldiag_060_005_thr0.1.png)
 

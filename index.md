@@ -64,7 +64,3 @@ Please refer to the [README document](https://github.com/pySTEPS/pysteps/blob/ma
 ![](figs/fmi_reldiag_060_005_thr0.1.png)
 
 *The reliability diagram for 0.1 mm/h threshold and a +60 minute ensemble nowcast with 20 members computed for the above FMI example.*
-
-![](figs/mch_rankhist_060_005.png)
-
-*The rank histogram of a 20-member nowcast at +60 minutes for the above MeteoSwiss event.*

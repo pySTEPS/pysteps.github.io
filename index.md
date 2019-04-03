@@ -66,6 +66,6 @@ Please refer to the [README document](https://github.com/pySTEPS/pysteps/blob/ma
 *The reliability diagram for 0.1 mm/h threshold and a +60 minute ensemble nowcast with 20 members computed for the above FMI example.*
 
 ## Main partners
-<img src="figs/logo_fmi.png" alt="drawing" height="50"/>     <img src="figs/logo_mch.png" alt="drawing" height="50"/>     <img src="figs/logo_bom.png" alt="drawing" height="50"/>
+<pre><img src="figs/logo_fmi.png" alt="drawing" height="50"/>    <img src="figs/logo_mch.png" alt="drawing" height="50"/>    <img src="figs/logo_bom.png" alt="drawing" height="50"/></pre>
 
-<img src="figs/logo_mcgill.jpg" alt="drawing" height="70"/>     <img src="figs/logo_csu.jpg" alt="drawing" height="70"/>     <img src="figs/logo_ethz.jpg" alt="drawing" height="70"/>
+<pre><img src="figs/logo_mcgill.jpg" alt="drawing" height="50"/>    <img src="figs/logo_csu.jpg" alt="drawing" height="50"/>    <img src="figs/logo_ethz.jpg" alt="drawing" height="45"/></pre>

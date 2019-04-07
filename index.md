@@ -5,40 +5,19 @@ The pySTEPS initiative  is a community that develops and maintains an easy to us
 
 The focus is on **probabilistic nowcasting of radar precipitation fields**, but pySTEPS is designed to allow a wider range of uses.
 
-## New documentation page on Read the Docs
+## Documentation
 
-In preparation of the V1.0 release, we have moved all our documentation to Read the Docs at the following link:
+The pysteps documentation is available on Read the Docs
 
 [https://pysteps.readthedocs.io](https://pysteps.readthedocs.io)
 
+This also includes a [gallery of tutorials](https://pysteps.readthedocs.io/en/latest/auto_examples/index.html) and the [reference guide](https://pysteps.readthedocs.io/en/latest/pysteps_reference/index.html) for all modules and functions available in pysteps.
+
 Note that the [old documentation](https://pysteps.github.io/pysteps/refmanual/) for V0.2 is currently still available.
 
-## Download pysteps 0.2
+## Download pysteps
 
 The most recent release of pysteps is available [here](https://github.com/pySTEPS/pysteps/releases).
-
-Change log for pysteps 0.2:
-
--    Bug fixes.
--    Performance and syntax improvements.
--    Improve documentation to several modules and methods.
--    Add the Variational Echo Tracking (VET) method from MAPLE to the motion module.
--    Replace the config module with a JSON pystepsrc configuration file.
--    More efficient computation of the FFT in the cascade decomposition and noise generation by using the real FFT instead of the complex FFT, i.e. rfft2/irfft2 instead of fft2/ifft2.
--    More sensible naming of several main modules: optflow -> motion, advection -> extrapolation and postproc -> postprocessing.
--    New utility methods to clip the domain by geographical coordinates.
--    New data transformation methods: normal quantile, square-root and logarithmic transformations.
--    New importer for MeteoSwiss' metranet data format.
--    New "shift and scale" post-processing method.
--    Implement the S-PROG method with probability matching.
--    New intensity-scale verification method.
--    New visualization methods: cartopy backend, exceedance probabilities and plotting motion fields on a map.
--    Support for Swiss projection when using cartopy.
--    New interface module for different FFT methods and allow the user to choose the method.
--    Fix incorrect separation into components when using the bps method for adding perturbations to the advection field.
--    Two different methods for adjusting the temporal autocorrelation coefficients in order to guarantee stationarity of the resulting AR(2) models.
--    Modify the STEPS method to have the same number of positional arguments as the other methods in the nowcasts module and reorganize the keyword arguments.
--    Move the deterministic S-PROG mask computation outside the stochastic part of the STEPS method to avoid repeated computations.
 
 ## ERAD2018 short-course
 

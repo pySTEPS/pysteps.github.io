@@ -1,7 +1,7 @@
 [logo]: https://avatars3.githubusercontent.com/u/40021569?s=200&v=4
 ![alt text][logo]
 
-The pySTEPS initiative  is a community that develops and maintains an easy to use, modular, free and open source python framework for short-term ensemble prediction systems.
+The pySTEPS initiative  is a community that develops and maintains an easy to use, modular, free and open-source **python framework for short-term ensemble prediction systems**.
 
 The focus is on **probabilistic nowcasting of radar precipitation fields**, but pySTEPS is designed to allow a wider range of uses.
 
@@ -11,9 +11,18 @@ The pysteps documentation is available on Read the Docs
 
 [https://pysteps.readthedocs.io](https://pysteps.readthedocs.io)
 
-This also includes a [gallery of tutorials](https://pysteps.readthedocs.io/en/latest/auto_examples/index.html) and the [reference guide](https://pysteps.readthedocs.io/en/latest/pysteps_reference/index.html) for all modules and functions available in pysteps.
+This also includes a [gallery of tutorials](https://pysteps.readthedocs.io/en/latest/auto_examples/index.html) and the [reference guide](https://pysteps.readthedocs.io/en/latest/pysteps_reference/index.html) for all modules and functions available in pysteps. 
 
-Note that the [old documentation](https://pysteps.github.io/pysteps/refmanual/) for V0.2 is currently still available.
+Note that the documentation for V0.2 is currently still available [here](https://pysteps.github.io/pysteps/refmanual/).
+
+## Quick-start guide
+The easiest way to install pysteps is through [conda](https://docs.conda.io/en/latest/). To install the pysteps package in an existing conda environment:
+
+`conda install -c conda-forge pysteps`
+
+Please note that since conda-forge and the default channels are not 100% compatible, it can happen that a missmatch in the versions available on each channel will result in an error. A possible solution consists in using conda-forge as the priority channel. More info [here](https://conda-forge.org/docs/user/tipsandtricks.html#using-multiple-channels).
+
+Please refer to the pysteps [README](https://github.com/pySTEPS/pysteps/blob/master/README.rst) for more detailed installation instructions.
 
 ## Download pysteps
 
@@ -24,11 +33,6 @@ The most recent release of pysteps is available [here](https://github.com/pySTEP
 Our first workshop using *pysteps* took place during ERAD2018 in Ede-Wageningen, NL, on 1 July 2018. With over 30 participants, this was a very successful workshop! We would like to thank all the participants for their enthusiasm and commitment! 
 
 The short-course description and training material are available on the [ERAD2018 website](https://www.erad2018.nl/short-courses/) (search for short-course 4: *Radar-based Ensemble Precipitation Nowcasting*).
-
-## Quick-start guide
-It is very easy to start using *pysteps*! You simply need to install the dependencies, download the latest *pysteps* version and install it.
-
-Please refer to the [README document](https://github.com/pySTEPS/pysteps/blob/master/README.rst) in our main github repository for the installation instructions.
 
 ## Gallery
 

@@ -48,6 +48,13 @@ The short-course description and training material are available on the [ERAD201
 
 *The reliability diagram for 0.1 mm/h threshold and a +60 minute ensemble nowcast with 20 members computed for the above FMI example.*
 
+## Reference publications
+
+Pulkkinen, S., D. Nerini, A. Perez Hortal, C. Velasco-Forero, U. Germann, A. Seed, and L. Foresti, 2019:  Pysteps:  an open-source Python library for probabilistic precipitation nowcasting (v1.0). *Geosci. Model Dev. Discussion*. **Submitted**.
+
+Pulkkinen, S., D. Nerini, A. Perez Hortal, C. Velasco-Forero, U. Germann, A. Seed, and
+L. Foresti, 2019: pysteps - a Community-Driven Open-Source Library for Precipitation Nowcasting. *Poster presented at the 3rd European Nowcasting Conference, Madrid, ES*. doi: 10.13140/RG.2.2.31368.67840 [[source](https://www.researchgate.net/publication/332781022_pysteps_-_a_Community-Driven_Open-Source_Library_for_Precipitation_Nowcasting)]
+
 ## Main partners
 <pre style="background-color: white;"><img src="figs/logo_fmi.png" alt="drawing" height="50"/>    <img src="figs/logo_mch.png" alt="drawing" height="50"/></pre>
 

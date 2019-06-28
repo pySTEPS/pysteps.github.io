@@ -5,7 +5,7 @@ The pySTEPS initiative  is a community that develops and maintains an easy to us
 
 The focus is on **probabilistic nowcasting of radar precipitation fields**, but pySTEPS is designed to allow a wider range of uses.
 
-You can find the pysteps package on github.com: https://github.com/pySTEPS/pysteps. Also checkout [this overview poster](https://www.researchgate.net/publication/332781022_pysteps_-_a_Community-Driven_Open-Source_Library_for_Precipitation_Nowcasting).
+You can find the pysteps package on github.com: [https://github.com/pySTEPS/pysteps](https://github.com/pySTEPS/pysteps). Also checkout this [overview poster](https://www.researchgate.net/publication/332781022_pysteps_-_a_Community-Driven_Open-Source_Library_for_Precipitation_Nowcasting).
 
 ## Documentation
 
@@ -16,13 +16,13 @@ The pysteps documentation is available on Read the Docs
 This also includes a [gallery of tutorials](https://pysteps.readthedocs.io/en/latest/auto_examples/index.html) and the [reference guide](https://pysteps.readthedocs.io/en/latest/pysteps_reference/index.html) for all modules and functions available in pysteps.
 
 ## Quick-start guide
-The easiest way to install pysteps is through [conda](https://docs.conda.io/en/latest/). To install the pysteps package in an existing conda environment:
+
+
+The easiest way to install pysteps is through [conda](https://anaconda.org/conda-forge/pysteps). To install the pysteps package in an existing conda environment:
 
 `conda install -c conda-forge pysteps`
 
-Please note that since conda-forge and the default channels are not 100% compatible, it can happen that a missmatch in the versions available on each channel will result in an error. A possible solution consists in using conda-forge as the priority channel. More info [here](https://conda-forge.org/docs/user/tipsandtricks.html#using-multiple-channels).
-
-Please refer to the pysteps [README](https://github.com/pySTEPS/pysteps/blob/master/README.rst) for more detailed installation instructions.
+Please refer to the pysteps [installation guide](https://pysteps.readthedocs.io/en/latest/user_guide/install_pysteps.html) for more detailed installation instructions.
 
 ## Download pysteps
 

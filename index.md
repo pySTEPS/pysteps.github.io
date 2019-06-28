@@ -5,6 +5,8 @@ The pySTEPS initiative  is a community that develops and maintains an easy to us
 
 The focus is on **probabilistic nowcasting of radar precipitation fields**, but pySTEPS is designed to allow a wider range of uses.
 
+You can find the pysteps package on github.com: https://github.com/pySTEPS/pysteps. Also checkout [this overview poster](https://www.researchgate.net/publication/332781022_pysteps_-_a_Community-Driven_Open-Source_Library_for_Precipitation_Nowcasting).
+
 ## Documentation
 
 The pysteps documentation is available on Read the Docs

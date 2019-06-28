@@ -11,9 +11,7 @@ The pysteps documentation is available on Read the Docs
 
 [https://pysteps.readthedocs.io](https://pysteps.readthedocs.io)
 
-This also includes a [gallery of tutorials](https://pysteps.readthedocs.io/en/latest/auto_examples/index.html) and the [reference guide](https://pysteps.readthedocs.io/en/latest/pysteps_reference/index.html) for all modules and functions available in pysteps. 
-
-Note that the documentation for V0.2 is currently still available [here](https://pysteps.github.io/pysteps/refmanual/).
+This also includes a [gallery of tutorials](https://pysteps.readthedocs.io/en/latest/auto_examples/index.html) and the [reference guide](https://pysteps.readthedocs.io/en/latest/pysteps_reference/index.html) for all modules and functions available in pysteps.
 
 ## Quick-start guide
 The easiest way to install pysteps is through [conda](https://docs.conda.io/en/latest/). To install the pysteps package in an existing conda environment:

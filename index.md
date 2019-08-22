@@ -58,6 +58,6 @@ L. Foresti, 2019: pysteps - a Community-Driven Open-Source Library for Precipita
 ## Main partners
 <pre style="background-color: white;"><img src="figs/logo_fmi.png" alt="drawing" height="50"/>    <img src="figs/logo_mch.png" alt="drawing" height="50"/></pre>
 
-<pre style="background-color: white;"><img src="figs/logo_mcgill.jpg" alt="drawing" height="50"/>    <img src="figs/logo_bom.png" alt="drawing" height="50"/></pre>
-
 <pre style="background-color: white;"><img src="figs/logo_csu.jpg" alt="drawing" height="50"/>    <img src="figs/logo_ethz.jpg" alt="drawing" height="45"/></pre>
+
+<pre style="background-color: white;"> <img src="figs/logo_bom.png" alt="drawing" height="50"/></pre>

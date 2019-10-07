@@ -30,7 +30,7 @@ The most recent release of pysteps is available [here](https://github.com/pySTEP
 
 ## ERAD2018 short-course
 
-Our first workshop using *pysteps* took place during ERAD2018 in Ede-Wageningen, NL, on 1 July 2018. With over 30 participants, this was a very successful workshop! We would like to thank all the participants for their enthusiasm and commitment! 
+Our first workshop using *pysteps* took place during ERAD2018 in Ede-Wageningen, NL, on 1 July 2018. With over 30 participants, this was a very successful workshop! We would like to thank all the participants for their enthusiasm and commitment!
 
 The short-course description and training material are available on the [ERAD2018 website](https://www.erad2018.nl/short-courses/) (search for short-course 4: *Radar-based Ensemble Precipitation Nowcasting*).
 
@@ -50,10 +50,15 @@ The short-course description and training material are available on the [ERAD201
 
 ## Reference publications
 
-Pulkkinen, S., D. Nerini, A. Perez Hortal, C. Velasco-Forero, U. Germann, A. Seed, and L. Foresti, 2019:  Pysteps:  an open-source Python library for probabilistic precipitation nowcasting (v1.0). *Geosci. Model Dev. Discuss.*, doi:10.5194/gmd-2019-94, **in review**. [[source](https://www.geosci-model-dev-discuss.net/gmd-2019-94/)]
+Pulkkinen, S., D. Nerini, A. Perez Hortal, C. Velasco-Forero, U. Germann,
+A. Seed, and L. Foresti, 2019:  Pysteps:  an open-source Python library for
+probabilistic precipitation nowcasting (v1.0). *Geosci. Model Dev.*, **12 (10)**,
+4185–4219. [doi:10.5194/gmd-12-4185-2019](https://doi.org/10.5194/gmd-12-4185-2019).
 
 Pulkkinen, S., D. Nerini, A. Perez Hortal, C. Velasco-Forero, U. Germann, A. Seed, and
-L. Foresti, 2019: pysteps - a Community-Driven Open-Source Library for Precipitation Nowcasting. *Poster presented at the 3rd European Nowcasting Conference, Madrid, ES*. doi: 10.13140/RG.2.2.31368.67840. [[source](https://www.researchgate.net/publication/332781022_pysteps_-_a_Community-Driven_Open-Source_Library_for_Precipitation_Nowcasting)]
+L. Foresti, 2019: pysteps - a Community-Driven Open-Source Library for
+Precipitation Nowcasting. *Poster presented at the 3rd European Nowcasting
+Conference, Madrid, ES*. [doi: 10.13140/RG.2.2.31368.67840](https://doi.org/10.13140/RG.2.2.31368.67840).
 
 ## Main partners
 <pre style="background-color: white;"><img src="figs/logo_fmi.png" alt="drawing" height="50"/>    <img src="figs/logo_mch.png" alt="drawing" height="50"/></pre>

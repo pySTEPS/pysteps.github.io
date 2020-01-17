@@ -24,10 +24,6 @@ The easiest way to install pysteps is through [conda](https://anaconda.org/conda
 
 Please refer to the pysteps [installation guide](https://pysteps.readthedocs.io/en/latest/user_guide/install_pysteps.html) for more detailed installation instructions.
 
-## Download pysteps
-
-The most recent release of pysteps is available [here](https://github.com/pySTEPS/pysteps/releases).
-
 ## Get in touch
 
 We encourage you to open [Issues](https://github.com/pySTEPS/pysteps/issues) via our [GitHub page](https://github.com/pySTEPS/pysteps). ALternatively, you can get in touch with the pysteps community on our [pysteps slack](https://pysteps.slack.com/). To get access to it, you first need to ask for an invitation, which you can automatically receive visiting [this invite page](https://pysteps-slackin.herokuapp.com/). This page can sometimes take a while to load so please be patient.

@@ -28,6 +28,10 @@ Please refer to the pysteps [installation guide](https://pysteps.readthedocs.io/
 
 The most recent release of pysteps is available [here](https://github.com/pySTEPS/pysteps/releases).
 
+## Get in touch
+
+We encourage you to open [Issues](https://github.com/pySTEPS/pysteps/issues) via our [GitHub page](https://github.com/pySTEPS/pysteps). ALternatively, you can get in touch with the pysteps community on our [pysteps slack](https://pysteps.slack.com/). To get access to it, you first need to ask for an invitation, which you can automatically receive visiting [this invite page](https://pysteps-slackin.herokuapp.com/). This page can sometimes take a while to load so please be patient.
+
 ## ERAD2018 short-course
 
 Our first workshop using *pysteps* took place during ERAD2018 in Ede-Wageningen, NL, on 1 July 2018. With over 30 participants, this was a very successful workshop! We would like to thank all the participants for their enthusiasm and commitment!

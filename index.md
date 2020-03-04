@@ -17,7 +17,6 @@ This also includes a [gallery of tutorials](https://pysteps.readthedocs.io/en/la
 
 ## Quick-start guide
 
-
 The easiest way to install pysteps is through [conda](https://anaconda.org/conda-forge/pysteps). To install the pysteps package in an existing conda environment:
 
 `conda install -c conda-forge pysteps`
@@ -26,11 +25,11 @@ Please refer to the pysteps [installation guide](https://pysteps.readthedocs.io/
 
 ## Get in touch
 
-We encourage you to open [Issues](https://github.com/pySTEPS/pysteps/issues) via our [GitHub page](https://github.com/pySTEPS/pysteps). ALternatively, you can get in touch with the pysteps community on our [pysteps slack](https://pysteps.slack.com/). To get access to it, you first need to ask for an invitation, which you can automatically receive visiting [this invite page](https://pysteps-slackin.herokuapp.com/). This page can sometimes take a while to load so please be patient.
+We encourage you to open [Issues](https://github.com/pySTEPS/pysteps/issues) via our [GitHub page](https://github.com/pySTEPS/pysteps). Alternatively, get in touch with the pysteps community on our [pysteps slack](https://pysteps.slack.com/). To get access to it, you first need to subscripbe using the following automatic [invitation page](https://pysteps-slackin.herokuapp.com/). This page can sometimes take a while to load so please be patient.
 
 ## ERAD2020 short-course
 
-A second edition of our nowcasting workshop will take place at [ERAD2020](https://www.erad2020.ch/) in Locarno, Switzerland, on Aug 30th! Registration to the short course will open on March 2020. More information will follow.
+A second edition of our nowcasting workshop will take place at [ERAD2020](https://www.erad2020.ch/) in Locarno, Switzerland, on Aug 30th! Registration are already open, book your place and find more info [here](https://www.erad2020.ch/short-courses-1).
 
 ## ERAD2018 short-course
 

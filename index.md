@@ -31,6 +31,8 @@ We encourage you to open [Issues](https://github.com/pySTEPS/pysteps/issues) via
 
 A second edition of our nowcasting workshop will take place at [ERAD2020](https://www.erad2020.ch/) in Locarno, Switzerland, on Aug 30th! Registration are already open, book your place and find more info [here](https://www.erad2020.ch/short-courses-1).
 
+**Important update:** The 11th ERAD is postponed to 2022, see the official communication from the organizers [here](https://www.erad2020.ch/). The pysteps short course is consequently cancelled.
+
 ## ERAD2018 short-course
 
 Our first workshop using *pysteps* took place during ERAD2018 in Ede-Wageningen, NL, on 1 July 2018. With over 30 participants, this was a very successful workshop! We would like to thank all the participants for their enthusiasm and commitment!

@@ -39,7 +39,7 @@ Our first workshop using *pysteps* took place during ERAD2018 in Ede-Wageningen,
 
 The short-course description and training material are available on the [ERAD2018 website](https://www.erad2018.nl/short-courses/) (search for short-course 4: *Radar-based Ensemble Precipitation Nowcasting*).
 
-## Machine learning vs pysteps
+## Benchmarking machine learning with pysteps
 
 If you intend to use pysteps as benchmark for comparing machine learning-based nowcasts, it is very important to select the most appropriate nowcasting and verification method from the pysteps library.
 

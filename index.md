@@ -25,7 +25,7 @@ Please refer to the pysteps [installation guide](https://pysteps.readthedocs.io/
 
 ## Get in touch
 
-We encourage you to open [Issues](https://github.com/pySTEPS/pysteps/issues) via our [GitHub page](https://github.com/pySTEPS/pysteps). Alternatively, get in touch with the pysteps community on our [pysteps slack](https://pysteps.slack.com/). To get access to it, you first need to subscripbe using the following automatic [invitation page](https://pysteps-slackin.herokuapp.com/). This page can sometimes take a while to load so please be patient.
+We encourage you to open [Issues](https://github.com/pySTEPS/pysteps/issues) via our [GitHub page](https://github.com/pySTEPS/pysteps).
 
 ## ERAD2020 short-course
 
